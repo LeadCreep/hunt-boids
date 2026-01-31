@@ -19,6 +19,8 @@ const FOV_CHANGE = 1.5
 
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
+@onready var weapon_manager = $Head/Camera3D/WeaponManager
+@onready var weapon_point = $Head/Camera3D/WeaponManager/WeaponPoint
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED);
@@ -66,6 +68,7 @@ func _physics_process(delta: float) -> void:
 
 	t_bob += delta * velocity.length() * float(is_on_floor());
 	camera.transform.origin = _headbob(t_bob);
+	weapon_manager.transform.origin = _headbob(t_bob);
 
 	#FOV
 	var velocity_clamped = clamp(velocity.length(), 0.5, SPRINT_SPEED * 2)

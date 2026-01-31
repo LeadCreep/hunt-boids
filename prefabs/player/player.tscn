@@ -1,10 +1,68 @@
 [gd_scene format=3 uid="uid://7imd6lg50yim"]
 
-[ext_resource type="Script" uid="uid://bcb7xbqmlvm3s" path="res://scripts/player.gd" id="1_sxsrd"]
+[ext_resource type="Script" uid="uid://bcb7xbqmlvm3s" path="res://scripts/player/player.gd" id="1_sxsrd"]
+[ext_resource type="Script" uid="uid://wm5fmmpfebl5" path="res://scripts/player/weapon_manager.gd" id="2_rdx4y"]
+[ext_resource type="Shader" uid="uid://d2uodu1xq8wop" path="res://shaders/ps1_models.gdshader" id="3_wv1mm"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tvfjm"]
 
+[sub_resource type="Animation" id="Animation_wv1mm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WeaponPoint/WeaponMesh:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_binfn"]
+resource_name = "fire"
+step = 0.033
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WeaponPoint/WeaponMesh:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.7853982, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_klv5p"]
+_data = {
+&"RESET": SubResource("Animation_wv1mm"),
+&"fire": SubResource("Animation_binfn")
+}
+
+[sub_resource type="Gradient" id="Gradient_binfn"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_klv5p"]
+gradient = SubResource("Gradient_binfn")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iylwk"]
+render_priority = 0
+shader = ExtResource("3_wv1mm")
+shader_parameter/albedo_texture = SubResource("GradientTexture1D_klv5p")
+shader_parameter/texture_tile = Vector2(1, 1)
+shader_parameter/snap_enabled = true
+shader_parameter/snap_resolution = 148.0
+shader_parameter/affine_weight = 0.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_rdx4y"]
+
 [node name="CharacterBody3D" type="CharacterBody3D" unique_id=1591146568]
+collision_layer = 2
 script = ExtResource("1_sxsrd")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1024201048]
@@ -14,3 +72,22 @@ shape = SubResource("CapsuleShape3D_tvfjm")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=1620271737]
+
+[node name="RayCast3D" type="RayCast3D" parent="Head/Camera3D" unique_id=554948876]
+target_position = Vector3(0, 0, -10)
+collision_mask = 4
+
+[node name="WeaponManager" type="Node3D" parent="Head/Camera3D" unique_id=1387510208]
+script = ExtResource("2_rdx4y")
+
+[node name="WeaponAnimation" type="AnimationPlayer" parent="Head/Camera3D/WeaponManager" unique_id=708899946]
+libraries/ = SubResource("AnimationLibrary_klv5p")
+speed_scale = 4.0
+
+[node name="WeaponPoint" type="Node3D" parent="Head/Camera3D/WeaponManager" unique_id=2109125071]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.27075052, -0.21263438, -0.65565825)
+
+[node name="WeaponMesh" type="MeshInstance3D" parent="Head/Camera3D/WeaponManager/WeaponPoint" unique_id=152898521]
+transform = Transform3D(0.19049248, 0, 0, 0, 0.17278934, 0, 0, 0, 0.45299405, 0.2273969, -0.11949214, 0.25616395)
+material_override = SubResource("ShaderMaterial_iylwk")
+mesh = SubResource("BoxMesh_rdx4y")

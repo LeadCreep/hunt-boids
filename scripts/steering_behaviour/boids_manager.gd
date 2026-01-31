@@ -50,3 +50,9 @@ func clear_boids() -> void:
 	for boid: Boid in boids:
 		boid.queue_free()
 	boids.clear()
+
+func remove_boid(boid: Boid) -> void:
+	if boid in boids:
+		boids.erase(boid)
+	for b: Boid in boids:
+		b.update_neighbors()

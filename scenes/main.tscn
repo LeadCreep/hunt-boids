@@ -143,6 +143,32 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
+[node name="UI" type="Control" parent="CanvasLayer" unique_id=1203576522]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/UI" unique_id=711204750]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
 [node name="World" type="Node3D" parent="." unique_id=926616253]
 
 [node name="Floor" type="MeshInstance3D" parent="World" unique_id=1497414941]
@@ -151,6 +177,7 @@ material_override = SubResource("ShaderMaterial_272bh")
 mesh = SubResource("PlaneMesh_ig7tw")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="World/Floor" unique_id=1720573585]
+collision_mask = 6
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Floor/StaticBody3D" unique_id=978546141]
 shape = SubResource("ConvexPolygonShape3D_jyhfs")

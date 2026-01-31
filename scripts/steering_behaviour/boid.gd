@@ -8,6 +8,8 @@ var steerings: Array[Steer]
 var desired_velocity: Vector3 = Vector3.ZERO
 var steering_force: Vector3 = Vector3.ZERO
 
+var dead_boid: PackedScene = preload("res://prefabs/boids/deadBoid.tscn")
+
 func _ready() -> void:
 	for s in get_children():
 		if (s is Steer):
@@ -55,3 +57,14 @@ func update_neighbors() -> void:
 	for s: Steer in steerings:
 		if s.has_method("update_neighbors"):
 			s.update_neighbors()
+
+func get_hit() -> void:
+	var parent = get_parent() as BoidsManager
+	parent.remove_boid(self )
+	var dead_boid_instance: Node3D = dead_boid.instantiate()
+	parent.add_child(dead_boid_instance)
+	dead_boid_instance.global_transform = global_transform
+	# dead_boid_instance.rotation = - rotation
+	dead_boid_instance.velocity = velocity
+	# dead_boid_instance.look_at(- (global_position + velocity), Vector3.UP)
+	queue_free()
