@@ -25,6 +25,7 @@ window/stretch/aspect="keep_height"
 [file_customization]
 
 folder_colors={
+"res://custom_resources/": "teal",
 "res://models/": "orange",
 "res://prefabs/": "purple",
 "res://scenes/": "red",
