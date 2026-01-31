@@ -1,16 +1,24 @@
 extends Node3D
 class_name BoidsManager
 
+var boid_ressources: Array[BoidRessource] = [
+	preload("res://custom_resources/boids/boid_normal.tres"),
+	preload("res://custom_resources/boids/boid_rare.tres"),
+	preload("res://custom_resources/boids/boid_legendary.tres"),
+]
 var boids: Array[Boid] = []
 var boid_scene: PackedScene = preload("res://prefabs/boids/boid.tscn")
+
+@export var target_number_of_boids: int = 100
+@onready var spawn_box: Area3D = $"SpawnBox"
+
 @export var neighbor_radius: float = 5.0
 var timer_update_neighbors: float = 0.0
 @export var update_neighbors_interval: float = 1.0
 
-@export var target_number_of_boids: int = 100
-
-@onready var spawn_box: Area3D = $"SpawnBox"
-
+@export var chance_normal_boid: float = 0.7
+@export var chance_rare_boid: float = 0.25
+@export var chance_legendary_boid: float = 0.05
 
 func _ready() -> void:
 	assert(spawn_box != null, "SpawnBox Area3D non trouvée")
@@ -42,9 +50,20 @@ func _process(delta: float) -> void:
 
 func spawn_boid(pos: Vector3) -> void:
 	var boid_instance: Boid = boid_scene.instantiate()
+	var random_index: int = random_chance_boid_spawn()
+	boid_instance.load_ressource(boid_ressources[random_index])
 	add_child(boid_instance)
 	boid_instance.global_position = pos
 	boids.append(boid_instance)
+
+func random_chance_boid_spawn() -> int:
+	var chance: float = randf()
+	if chance < chance_normal_boid:
+		return 0
+	elif chance < chance_normal_boid + chance_rare_boid:
+		return 1
+	else:
+		return 2
 
 func clear_boids() -> void:
 	for boid: Boid in boids:

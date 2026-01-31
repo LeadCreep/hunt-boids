@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="BoidRessource" format=3 uid="uid://bfapcff83mu0a"]
+
+[ext_resource type="Shader" uid="uid://d2uodu1xq8wop" path="res://shaders/ps1_models.gdshader" id="1_6nvsc"]
+[ext_resource type="Script" uid="uid://c0lk7sgqdcemv" path="res://scripts/custom_resources/boid_ressource.gd" id="2_c0grc"]
+[ext_resource type="Texture2D" uid="uid://bxs27dib1b31b" path="res://models/boids/m_boid_normal_0.png" id="2_oqwmj"]
+[ext_resource type="ArrayMesh" uid="uid://d0xd8d4ugqoda" path="res://models/boids/base_mesh_boid.tres" id="3_2caus"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nyxjl"]
+render_priority = 0
+shader = ExtResource("1_6nvsc")
+shader_parameter/albedo_texture = ExtResource("2_oqwmj")
+shader_parameter/texture_tile = Vector2(1, 1)
+shader_parameter/snap_enabled = true
+shader_parameter/snap_resolution = 148.0
+shader_parameter/affine_weight = 0.0
+
+[resource]
+script = ExtResource("2_c0grc")
+mesh = ExtResource("3_2caus")
+material = SubResource("ShaderMaterial_nyxjl")
+metadata/_custom_type_script = "uid://c0lk7sgqdcemv"

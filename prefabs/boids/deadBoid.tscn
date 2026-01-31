@@ -1,59 +1,18 @@
-[gd_scene format=4 uid="uid://c5k2c68pf2rvj"]
+[gd_scene format=3 uid="uid://c5k2c68pf2rvj"]
 
 [ext_resource type="Script" uid="uid://cd8eas4yqp0br" path="res://scripts/steering_behaviour/dead_boid.gd" id="1_32te3"]
 [ext_resource type="Shader" uid="uid://d2uodu1xq8wop" path="res://shaders/ps1_models.gdshader" id="1_obo0w"]
-[ext_resource type="Texture2D" uid="uid://dr0nohstq24de" path="res://models/cone_0.png" id="2_32te3"]
+[ext_resource type="Texture2D" uid="uid://bxs27dib1b31b" path="res://models/boids/m_boid_normal_0.png" id="3_ay1vx"]
+[ext_resource type="ArrayMesh" uid="uid://d0xd8d4ugqoda" path="res://models/boids/base_mesh_boid.tres" id="4_wc0nm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ay1vx"]
 render_priority = 0
 shader = ExtResource("1_obo0w")
-shader_parameter/albedo_texture = ExtResource("2_32te3")
+shader_parameter/albedo_texture = ExtResource("3_ay1vx")
 shader_parameter/texture_tile = Vector2(1, 1)
 shader_parameter/snap_enabled = true
 shader_parameter/snap_resolution = 148.0
 shader_parameter/affine_weight = 0.0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_indbt"]
-resource_name = "material_0"
-transparency = 2
-alpha_scissor_threshold = 0.05
-alpha_antialiasing_mode = 0
-cull_mode = 2
-albedo_texture = ExtResource("2_32te3")
-texture_filter = 0
-texture_repeat = false
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_j7gje"]
-_surfaces = [{
-"aabb": AABB(-0.5, 0, -0.5, 1, 1, 1),
-"format": 34896613377,
-"index_count": 72,
-"index_data": PackedByteArray("AAABAAIAAgADAAAABAABAAAAAAADAAQAAgABAAUABQADAAIABQABAAYABgADAAUABwABAAQABAADAAcABgABAAgACAADAAYACQADAAgACAABAAkABwADAAoACgABAAcACgADAAsACwABAAoADAADAAkACQABAAwACwADAA0ADQABAAsADQADAAwADAABAA0A"),
-"name": "material_0",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 14,
-"vertex_data": PackedByteArray("st0AALLdAAD/fwAA/38AAEuiAAD//wAA/3////9/AAD//wAAS6IAALNdAAD//wAATCIAALLdAAD//wAAs10AAAAAAABLogAAAAAAALNdAACy3QAATCIAAEuiAAAAAAAATCIAAEwiAACzXQAAAAAAAA==")
-}]
-blend_shape_mode = 0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_wc0nm"]
-resource_name = "blockbench_export_mesh"
-_surfaces = [{
-"aabb": AABB(-0.5, 0, -0.5, 1, 1, 1),
-"attribute_data": PackedByteArray("bDeTCP8f/x+SKAAAklKNa/9J/yM8Y4Bn/z9sF/8f/x9sN5MIwlh/m/9x/1dsaY2f/z+SKP8f/x//P2wXbGmNn/9x/1eSeo2fbDdsN/8f/x//P5IoknqNn/9x/1c8i3+bkij/P/8f/x9sN2w3wwCAh/8Z/0NsEY2LbBf/P/8f/x+SKP8/bBGNi/8Z/0OSIo2LkwhsN/8f/x9sF/8/kiKNi/8Z/0M8M4CHAACSKP8f/x+TCGw3wmCAQ/95AABscY1HAABsF/8f/x8AAJIobHGNR/95AACSgo1HkwiTCP8f/x8AAGwXkoKNR/95AAA8k4BDbBcAAP8f/x+TCJMIwjCAZ/9J/yNsQY1rkigAAP8f/x9sFwAAbEGNa/9J/yOSUo1r"),
-"format": 34896613399,
-"index_count": 72,
-"index_data": PackedByteArray("AAABAAIAAwAEAAUABgAHAAgACQAKAAsADAANAA4ADwAQABEAEgATABQAFQAWABcAGAAZABoAGwAcAB0AHgAfACAAIQAiACMAJAAlACYAJwAoACkAKgArACwALQAuAC8AMAAxADIAMwA0ADUANgA3ADgAOQA6ADsAPAA9AD4APwBAAEEAQgBDAEQARQBGAEcA"),
-"material": SubResource("StandardMaterial3D_indbt"),
-"name": "material_0",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 72,
-"vertex_data": PackedByteArray("st0AALLd/7//fwAA/3//v0uiAAD///+/S6IAAP//QJz/f////39AnLLdAACy3UCc//8AAEui/7//fwAA/3//v7LdAACy3f+/st0AALLdMrH/f////38ysf//AABLojKx//8AALNd/7//fwAA/3//v///AABLov+///8AAEuiJsL/f////38mwv//AACzXSbCst0AAEwi/7//fwAA/3//v///AACzXf+///8AALNdr9T/f////3+v1LLdAABMIq/US6IAAAAA/7//fwAA/3//v7LdAABMIv+/st0AAEwinO3/f////3+c7UuiAAAAAJzts10AAAAA/7//fwAA/3//v0uiAAAAAP+/S6IAAAAA////f////3///7NdAAAAAP//TCIAAEwi/7//fwAA/3//v7NdAAAAAP+/s10AAAAAnO3/f////3+c7UwiAABMIpztAAAAALNd/7//fwAA/3//v0wiAABMIv+/TCIAAEwir9T/f////3+v1AAAAACzXa/UAAAAAEui/7//fwAA/3//vwAAAACzXf+/AAAAALNdJsL/f////38mwgAAAABLoibCTCIAALLd/7//fwAA/3//vwAAAABLov+/AAAAAEuiMrH/f////38ysUwiAACy3TKxs10AAP///7//fwAA/3//v0wiAACy3f+/TCIAALLdQJz/f////39AnLNdAAD//0CcS6IAAP///7//fwAA/3//v7NdAAD///+/s10AAP//45L/f////3/jkkuiAAD//+OSAAD/fwAA/38AAP9/0LylSdC8pUnQvKVJAAD/fwAA/38AAP9/orTEFKK0xBSitMQUAAD/fwAA/38AAP9/DKmGFAyphhQMqYYUAAD/fwAA/38AAP9/faZOF32mThd9pk4XAAD/fwAA/38AAP9/zGBvBcxgbwXMYG8FAAD/fwAA/38AAP9//3+M5/9/jOf/f4znAAD/fwAA/38AAP9/kHrL4JB6y+CQesvgAAD/fwAA/38AAP9/TZeB2U2XgdlNl4HZAAD/fwAA/38AAP9/hpTx1oaU8daGlPHWAAD/fwAA/38AAP9/w5Rcy8OUXMvDlFzLAAD/fwAA/38AAP9/pcktw6XJLcOlyS3DAAD/fwAA/38AAP9/////f////3////9/")
-}]
-blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_j7gje")
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_gagrk"]
 points = PackedVector3Array(-9.787083e-05, 1, -9.787083e-05, 0.13390762, 0, -0.5, -0.13400549, 0, -0.5, -0.36609238, 0, -0.36609238, -0.5, 0, -0.13400549, -0.5, 0, 0.13390762, -0.36609238, 0, 0.3659945, -0.13400549, 0, 0.5, 0.13390762, 0, 0.5, 0.3659945, 0, 0.3659945, 0.5, 0, 0.13390762, 0.5, 0, -0.13400549, 0.3659945, 0, -0.36609238)
@@ -63,10 +22,10 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0
 collision_layer = 4
 script = ExtResource("1_32te3")
 
-[node name="cone" type="MeshInstance3D" parent="." unique_id=561671631]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=561671631]
 transform = Transform3D(1.9106855e-15, 4.371139e-08, -1, 1, -4.371139e-08, 0, -4.371139e-08, -1, -4.371139e-08, 0, 0, 0)
 material_override = SubResource("ShaderMaterial_ay1vx")
-mesh = SubResource("ArrayMesh_wc0nm")
+mesh = ExtResource("4_wc0nm")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=802242986]
 transform = Transform3D(1.9106855e-15, 4.371139e-08, -1, 1, -4.371139e-08, 0, -4.371139e-08, -1, -4.371139e-08, 0, 0, 0)
