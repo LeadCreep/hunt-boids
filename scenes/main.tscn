@@ -85,7 +85,7 @@ transform = Transform3D(0.8694949, 0.24172649, -0.43075153, 0, 0.8720693, 0.4893
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1186236345]
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=759876595]
+[node name="PSXShader" type="ColorRect" parent="CanvasLayer" unique_id=759876595]
 material = SubResource("ShaderMaterial_1bvp3")
 anchors_preset = 15
 anchor_right = 1.0
@@ -105,7 +105,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 1
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/UI" unique_id=711204750]
+[node name="Crossair" type="ColorRect" parent="CanvasLayer/UI" unique_id=711204750]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
