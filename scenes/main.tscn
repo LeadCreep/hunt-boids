@@ -3,15 +3,12 @@
 [ext_resource type="Texture2D" uid="uid://l1mpt5t06r2b" path="res://textures/crappysky.png" id="1_o6xl0"]
 [ext_resource type="Script" uid="uid://kk4gfqm068l2" path="res://scripts/day_night.gd" id="1_tefeu"]
 [ext_resource type="Shader" uid="uid://d2uodu1xq8wop" path="res://shaders/ps1_models.gdshader" id="2_lquwl"]
-<<<<<<< HEAD
+[ext_resource type="PackedScene" path="res://scenes/ui.tscn" id="2_tefeu"]
 [ext_resource type="Texture2D" uid="uid://pdxdnnima5k2" path="res://textures/b92e41cf38004bf48e965053ffac8cee_RGB_Texture_512.png" id="3_7mycd"]
-=======
-[ext_resource type="PackedScene" uid="uid://de8h4rjndl85e" path="res://scenes/ui.tscn" id="2_tefeu"]
-[ext_resource type="Texture2D" uid="uid://pdxdnnima5k2" path="res://models/b92e41cf38004bf48e965053ffac8cee_RGB_Texture_512.png" id="3_7mycd"]
->>>>>>> b0688de3f227c221dbe54e77dc1869c0158065ca
 [ext_resource type="Shader" uid="uid://bjrjtcf4r1cuc" path="res://shaders/ps1_post_process.gdshader" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://7imd6lg50yim" path="res://prefabs/player/player.tscn" id="4_jyhfs"]
 [ext_resource type="Script" uid="uid://2lg6i40tfwpl" path="res://scripts/steering_behaviour/boids_manager.gd" id="5_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://drxlxp154txpr" path="res://prefabs/shed.tscn" id="9_85g3d"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_tbgi4"]
 mie_coefficient = 0.055
@@ -100,7 +97,7 @@ environment = SubResource("Environment_7dm0k")
 transform = Transform3D(4.371139e-08, 1, -8.742278e-08, 1, -4.371139e-08, 0, -3.821371e-15, -8.742278e-08, -1, 0, 0, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Env/SunContainer" unique_id=1142087677]
-transform = Transform3D(4.371139e-08, -3.821371e-15, -1, -8.742278e-08, -1, 0, -1, 8.742278e-08, -4.371139e-08, 0, -20, 0)
+transform = Transform3D(4.371139e-08, -3.821371e-15, -1, -8.742278e-08, -1, 0, -1, 8.742278e-08, -4.371139e-08, 0, 0, 0)
 
 [node name="DayNight" type="Node" parent="Env" unique_id=145494670 node_paths=PackedStringArray("sunlight", "world_environment", "debug_label")]
 script = ExtResource("1_tefeu")
@@ -138,6 +135,9 @@ collision_mask = 6
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Floor/StaticBody3D" unique_id=978546141]
 shape = SubResource("ConvexPolygonShape3D_jyhfs")
 
+[node name="Shed" parent="World" unique_id=796392439 instance=ExtResource("9_85g3d")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 4, 0, 4)
+
 [node name="Player" parent="." unique_id=625775103 instance=ExtResource("4_jyhfs")]
 transform = Transform3D(-1, 0, -5.9604645e-08, 0, 1, 0, 5.9604645e-08, 0, -1, 0, 1, -6)
 
@@ -155,6 +155,7 @@ debug_color = Color(0, 0, 1, 0.5)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 4.415018)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Target Seek" unique_id=393646013]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4463854, 0.5208564, 0)
 material_override = SubResource("ShaderMaterial_tipki")
 mesh = SubResource("SphereMesh_85g3d")
 
@@ -162,5 +163,6 @@ mesh = SubResource("SphereMesh_85g3d")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 5.686268)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Target Flee" unique_id=1001625000]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.691629, 0.56745136, -1.2309866)
 material_override = SubResource("ShaderMaterial_choun")
 mesh = SubResource("SphereMesh_85g3d")

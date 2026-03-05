@@ -17,3 +17,7 @@ func _physics_process(delta: float) -> void:
 	if collision_info:
 		on_floor = true
 		velocity = Vector3.ZERO
+
+func get_used() -> void:
+	print("Used")
+	queue_free()

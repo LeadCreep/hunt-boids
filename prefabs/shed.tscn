@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://drxlxp154txpr"]
+
+[ext_resource type="PackedScene" uid="uid://brjbgvahbpnsx" path="res://models/boids/shed.gltf" id="1_c3uq4"]
+[ext_resource type="Shader" uid="uid://d2uodu1xq8wop" path="res://shaders/ps1_models.gdshader" id="2_qngkp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_num2l"]
+render_priority = 0
+shader = ExtResource("2_qngkp")
+shader_parameter/texture_tile = Vector2(1, 1)
+shader_parameter/snap_enabled = true
+shader_parameter/snap_resolution = 256.0
+shader_parameter/affine_weight = 0.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c3uq4"]
+size = Vector3(2.8738098, 1.859375, 2.071167)
+
+[node name="blockbench_export" unique_id=796392439 instance=ExtResource("1_c3uq4")]
+
+[node name="cube" parent="." index="0" unique_id=1130709200]
+material_override = SubResource("ShaderMaterial_num2l")
+
+[node name="cube2" parent="." index="1" unique_id=751930800]
+material_override = SubResource("ShaderMaterial_num2l")
+
+[node name="cube3" parent="." index="2" unique_id=982676433]
+material_override = SubResource("ShaderMaterial_num2l")
+
+[node name="cube4" parent="." index="3" unique_id=1839082825]
+material_override = SubResource("ShaderMaterial_num2l")
+
+[node name="cube5" parent="." index="4" unique_id=211739894]
+material_override = SubResource("ShaderMaterial_num2l")
+
+[node name="cube6" parent="." index="5" unique_id=1736196004]
+material_override = SubResource("ShaderMaterial_num2l")
+
+[node name="cube7" parent="." index="6" unique_id=1421888655]
+material_override = SubResource("ShaderMaterial_num2l")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="7" unique_id=1287181584]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=369308726]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0036468506, 1.0256019, 0.44036865)
+shape = SubResource("BoxShape3D_c3uq4")

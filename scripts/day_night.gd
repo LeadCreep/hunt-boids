@@ -44,6 +44,6 @@ func _sun_intensity(deg_x: float) -> float:
 
 func get_clock_time() -> String:
 	var total_minutes: int = int(time_of_day * 24.0 * 60.0)
-	var hours: int = total_minutes / 60
+	var hours: int = int(float(total_minutes) / 60.0)
 	var minutes: int = total_minutes % 60
 	return "%02d:%02d" % [hours, minutes]
