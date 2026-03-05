@@ -2,16 +2,19 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pdxdnnima5k2"
-path="res://.godot/imported/b92e41cf38004bf48e965053ffac8cee_RGB_Texture_512.png-e6512e4e748bd16efd817641bacf4420.ctex"
+uid="uid://bxs27dib1b31b"
+path="res://.godot/imported/m_boid_normal_0.png-21578ec0a9ff3867b95d95968eee2011.ctex"
 metadata={
 "vram_texture": false
+}
+generator_parameters={
+"md5": "d6b08e19da440e2411fc1581d744328b"
 }
 
 [deps]
 
-source_file="res://models/b92e41cf38004bf48e965053ffac8cee_RGB_Texture_512.png"
-dest_files=["res://.godot/imported/b92e41cf38004bf48e965053ffac8cee_RGB_Texture_512.png-e6512e4e748bd16efd817641bacf4420.ctex"]
+source_file="res://textures/boids/m_boid_normal_0.png"
+dest_files=["res://.godot/imported/m_boid_normal_0.png-21578ec0a9ff3867b95d95968eee2011.ctex"]
 
 [params]
 
@@ -23,7 +26,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

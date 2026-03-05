@@ -2,7 +2,7 @@
 
 [ext_resource type="Shader" uid="uid://d2uodu1xq8wop" path="res://shaders/ps1_models.gdshader" id="1_6nvsc"]
 [ext_resource type="Script" uid="uid://c0lk7sgqdcemv" path="res://scripts/custom_resources/boid_ressource.gd" id="2_c0grc"]
-[ext_resource type="Texture2D" uid="uid://bxs27dib1b31b" path="res://models/boids/m_boid_normal_0.png" id="2_oqwmj"]
+[ext_resource type="Texture2D" uid="uid://bxs27dib1b31b" path="res://textures/boids/m_boid_normal_0.png" id="2_oqwmj"]
 [ext_resource type="ArrayMesh" uid="uid://d0xd8d4ugqoda" path="res://models/boids/base_mesh_boid.tres" id="3_2caus"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nyxjl"]

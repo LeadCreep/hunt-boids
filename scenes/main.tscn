@@ -1,19 +1,32 @@
 [gd_scene format=3 uid="uid://bf5imta3gul1s"]
 
+[ext_resource type="Texture2D" uid="uid://l1mpt5t06r2b" path="res://textures/crappysky.png" id="1_o6xl0"]
+[ext_resource type="Script" uid="uid://kk4gfqm068l2" path="res://scripts/day_night.gd" id="1_tefeu"]
 [ext_resource type="Shader" uid="uid://d2uodu1xq8wop" path="res://shaders/ps1_models.gdshader" id="2_lquwl"]
-[ext_resource type="Texture2D" uid="uid://pdxdnnima5k2" path="res://models/b92e41cf38004bf48e965053ffac8cee_RGB_Texture_512.png" id="3_7mycd"]
+[ext_resource type="Texture2D" uid="uid://pdxdnnima5k2" path="res://textures/b92e41cf38004bf48e965053ffac8cee_RGB_Texture_512.png" id="3_7mycd"]
 [ext_resource type="Shader" uid="uid://bjrjtcf4r1cuc" path="res://shaders/ps1_post_process.gdshader" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://7imd6lg50yim" path="res://prefabs/player/player.tscn" id="4_jyhfs"]
 [ext_resource type="Script" uid="uid://2lg6i40tfwpl" path="res://scripts/steering_behaviour/boids_manager.gd" id="5_tbgi4"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_h2yge"]
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_tbgi4"]
+mie_coefficient = 0.055
+mie_eccentricity = 0.99
+turbidity = 1.0
+sun_disk_scale = 0.0
+ground_color = Color(0, 0, 0, 1)
+night_sky = ExtResource("1_o6xl0")
 
 [sub_resource type="Sky" id="Sky_h2yge"]
-sky_material = SubResource("ProceduralSkyMaterial_h2yge")
+sky_material = SubResource("PhysicalSkyMaterial_tbgi4")
 
 [sub_resource type="Environment" id="Environment_7dm0k"]
 background_mode = 2
 sky = SubResource("Sky_h2yge")
+ambient_light_color = Color(0, 0, 0, 0)
+volumetric_fog_density = 0.01
+volumetric_fog_albedo = Color(0.34079826, 0.6191279, 1, 1)
+volumetric_fog_emission_energy = 0.0
+volumetric_fog_length = 751.04
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1bvp3"]
 shader = ExtResource("3_h2yge")
@@ -29,11 +42,7 @@ shader_parameter/snap_enabled = false
 shader_parameter/snap_resolution = 248.0
 shader_parameter/affine_weight = 0.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7dm0k"]
-albedo_color = Color(0.22790796, 0.13015893, 0, 1)
-
 [sub_resource type="PlaneMesh" id="PlaneMesh_ig7tw"]
-material = SubResource("StandardMaterial3D_7dm0k")
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_jyhfs"]
 points = PackedVector3Array(-1, 0, -1, -1, 0, 1, 1, 0, -1, 1, 0, 1)
@@ -77,11 +86,26 @@ shader_parameter/affine_weight = 0.0
 
 [node name="Scene" type="Node3D" unique_id=780055440]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=952028172]
+[node name="Env" type="Node" parent="." unique_id=2007378001]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Env" unique_id=952028172]
 environment = SubResource("Environment_7dm0k")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1142087677]
-transform = Transform3D(0.8694949, 0.24172649, -0.43075153, 0, 0.8720693, 0.48938248, 0.49394187, -0.42551556, 0.75825983, 0, -20, 0)
+[node name="SunContainer" type="Node3D" parent="Env" unique_id=1217108027]
+transform = Transform3D(4.371139e-08, 1, -8.742278e-08, 1, -4.371139e-08, 0, -3.821371e-15, -8.742278e-08, -1, 0, 0, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Env/SunContainer" unique_id=1142087677]
+transform = Transform3D(4.371139e-08, -3.821371e-15, -1, -8.742278e-08, -1, 0, -1, 8.742278e-08, -4.371139e-08, 0, -20, 0)
+
+[node name="DayNight" type="Node" parent="Env" unique_id=145494670 node_paths=PackedStringArray("sunlight", "world_environment", "debug_label")]
+script = ExtResource("1_tefeu")
+sunlight = NodePath("../SunContainer/DirectionalLight3D")
+world_environment = NodePath("../WorldEnvironment")
+debug_label = NodePath("Label")
+
+[node name="Label" type="Label" parent="Env/DayNight" unique_id=1036801487]
+offset_right = 40.0
+offset_bottom = 23.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1186236345]
 

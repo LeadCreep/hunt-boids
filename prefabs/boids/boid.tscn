@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dvicwbisqk0s8" path="res://scripts/steering_behaviour/boid.gd" id="1_1cuuw"]
 [ext_resource type="Shader" uid="uid://d2uodu1xq8wop" path="res://shaders/ps1_models.gdshader" id="2_0wt6w"]
-[ext_resource type="Texture2D" uid="uid://bxs27dib1b31b" path="res://models/boids/m_boid_normal_0.png" id="3_ownur"]
+[ext_resource type="Texture2D" uid="uid://bxs27dib1b31b" path="res://textures/boids/m_boid_normal_0.png" id="3_ownur"]
 [ext_resource type="ArrayMesh" uid="uid://d0xd8d4ugqoda" path="res://models/boids/base_mesh_boid.tres" id="4_mo486"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ownur"]
