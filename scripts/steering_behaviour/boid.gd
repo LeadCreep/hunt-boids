@@ -65,13 +65,13 @@ func get_hit() -> void:
 	parent.add_child(dead_boid_instance)
 	dead_boid_instance.global_transform = global_transform
 	dead_boid_instance.velocity = velocity
-	dead_boid_instance.get_child(0).mesh = $MeshInstance3D.mesh
-	dead_boid_instance.get_child(0).material_override = $MeshInstance3D.material_override
+	# dead_boid_instance.get_child(0).mesh = $MeshInstance3D.mesh
+	# dead_boid_instance.get_child(0).material_override = $MeshInstance3D.material_override
 	queue_free()
 
 func load_ressource(ressource: BoidRessource) -> void:
 	MAX_SPEED = ressource.max_speed
 	ACCELERATION = ressource.acceleration
-	var mesh_instance: MeshInstance3D = $MeshInstance3D
-	mesh_instance.mesh = ressource.mesh
-	mesh_instance.material_override = ressource.material
+	# var mesh_instance: MeshInstance3D = $MeshInstance3D
+	# mesh_instance.mesh = ressource.mesh
+	# mesh_instance.material_override = ressource.material

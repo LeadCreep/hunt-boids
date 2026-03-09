@@ -18,6 +18,6 @@ func _physics_process(delta: float) -> void:
 		on_floor = true
 		velocity = Vector3.ZERO
 
-func get_used() -> void:
+func get_used(inv: Inventory) -> void:
 	print("Used")
 	queue_free()

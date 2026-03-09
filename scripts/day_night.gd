@@ -7,8 +7,8 @@ extends Node
 
 @export var time_of_day: float = 0.0
 
+
 func _ready() -> void:
-	sunlight.rotation_degrees.x = time_of_day * 360.0
 	_update_environment()
 
 

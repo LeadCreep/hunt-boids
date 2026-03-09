@@ -1,32 +1,19 @@
 [gd_scene format=3 uid="uid://dqhgxg74264mx"]
 
 [ext_resource type="Script" uid="uid://dvicwbisqk0s8" path="res://scripts/steering_behaviour/boid.gd" id="1_1cuuw"]
-[ext_resource type="Shader" uid="uid://d2uodu1xq8wop" path="res://shaders/ps1_models.gdshader" id="2_0wt6w"]
-[ext_resource type="Texture2D" uid="uid://bxs27dib1b31b" path="res://textures/boids/m_boid_normal_0.png" id="3_ownur"]
-[ext_resource type="ArrayMesh" uid="uid://d0xd8d4ugqoda" path="res://models/boids/base_mesh_boid.tres" id="4_mo486"]
+[ext_resource type="PackedScene" uid="uid://d01auaahtb44i" path="res://prefabs/boids/drone.tscn" id="2_37uwk"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ownur"]
-render_priority = 0
-shader = ExtResource("2_0wt6w")
-shader_parameter/albedo_texture = ExtResource("3_ownur")
-shader_parameter/texture_tile = Vector2(1, 1)
-shader_parameter/snap_enabled = true
-shader_parameter/snap_resolution = 148.0
-shader_parameter/affine_weight = 0.0
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_0wt6w"]
-points = PackedVector3Array(-9.787083e-05, 1, -9.787083e-05, 0.13390762, 0, -0.5, -0.13400549, 0, -0.5, -0.36609238, 0, -0.36609238, -0.5, 0, -0.13400549, -0.5, 0, 0.13390762, -0.36609238, 0, 0.3659945, -0.13400549, 0, 0.5, 0.13390762, 0, 0.5, 0.3659945, 0, 0.3659945, 0.5, 0, 0.13390762, 0.5, 0, -0.13400549, 0.3659945, 0, -0.36609238)
+[sub_resource type="BoxShape3D" id="BoxShape3D_0wt6w"]
+size = Vector3(0.32330322, 0.92852783, 1.1032715)
 
 [node name="Boid" type="CharacterBody3D" unique_id=836007304]
 collision_layer = 4
 collision_mask = 5
 script = ExtResource("1_1cuuw")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=23826314]
-transform = Transform3D(1.9106855e-15, -4.371139e-08, 1, -1, -4.371139e-08, 0, 4.371139e-08, -1, -4.371139e-08, 0, 0, 0)
-material_override = SubResource("ShaderMaterial_ownur")
-mesh = ExtResource("4_mo486")
+[node name="Drone" parent="." unique_id=166426223 instance=ExtResource("2_37uwk")]
+transform = Transform3D(0.99999785, 0.001973685, 0.00061107625, -0.0019753145, 0.99999446, 0.00268188, -0.00060578913, -0.002683079, 0.99999624, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1339797490]
-transform = Transform3D(1.9106855e-15, -4.371139e-08, 1, -1, -4.371139e-08, 0, 4.371139e-08, -1, -4.371139e-08, 0, 0, 0)
-shape = SubResource("ConvexPolygonShape3D_0wt6w")
+transform = Transform3D(1.9106855e-15, -4.371139e-08, 1, -1, -4.371139e-08, 0, 4.371139e-08, -1, -4.371139e-08, 0.012573246, 0.15567017, 0.07156372)
+shape = SubResource("BoxShape3D_0wt6w")

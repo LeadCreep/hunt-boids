@@ -1,18 +1,7 @@
 [gd_scene format=3 uid="uid://c5k2c68pf2rvj"]
 
 [ext_resource type="Script" uid="uid://cd8eas4yqp0br" path="res://scripts/steering_behaviour/dead_boid.gd" id="1_32te3"]
-[ext_resource type="Shader" uid="uid://d2uodu1xq8wop" path="res://shaders/ps1_models.gdshader" id="1_obo0w"]
-[ext_resource type="Texture2D" uid="uid://bxs27dib1b31b" path="res://textures/boids/m_boid_normal_0.png" id="3_ay1vx"]
-[ext_resource type="ArrayMesh" uid="uid://d0xd8d4ugqoda" path="res://models/boids/base_mesh_boid.tres" id="4_wc0nm"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ay1vx"]
-render_priority = 0
-shader = ExtResource("1_obo0w")
-shader_parameter/albedo_texture = ExtResource("3_ay1vx")
-shader_parameter/texture_tile = Vector2(1, 1)
-shader_parameter/snap_enabled = true
-shader_parameter/snap_resolution = 148.0
-shader_parameter/affine_weight = 0.0
+[ext_resource type="PackedScene" uid="uid://d01auaahtb44i" path="res://prefabs/boids/drone.tscn" id="2_obo0w"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_gagrk"]
 points = PackedVector3Array(-9.787083e-05, 1, -9.787083e-05, 0.13390762, 0, -0.5, -0.13400549, 0, -0.5, -0.36609238, 0, -0.36609238, -0.5, 0, -0.13400549, -0.5, 0, 0.13390762, -0.36609238, 0, 0.3659945, -0.13400549, 0, 0.5, 0.13390762, 0, 0.5, 0.3659945, 0, 0.3659945, 0.5, 0, 0.13390762, 0.5, 0, -0.13400549, 0.3659945, 0, -0.36609238)
@@ -22,10 +11,8 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0
 collision_layer = 4
 script = ExtResource("1_32te3")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=561671631]
-transform = Transform3D(1.9106855e-15, 4.371139e-08, -1, 1, -4.371139e-08, 0, -4.371139e-08, -1, -4.371139e-08, 0, 0, 0)
-material_override = SubResource("ShaderMaterial_ay1vx")
-mesh = ExtResource("4_wc0nm")
+[node name="blockbench_export" parent="." unique_id=166426223 instance=ExtResource("2_obo0w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.13468018, -0.5611415)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=802242986]
 transform = Transform3D(1.9106855e-15, 4.371139e-08, -1, 1, -4.371139e-08, 0, -4.371139e-08, -1, -4.371139e-08, 0, 0, 0)

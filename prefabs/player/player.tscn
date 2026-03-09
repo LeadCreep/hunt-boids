@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://wm5fmmpfebl5" path="res://scripts/player/weapon_manager.gd" id="2_rdx4y"]
 [ext_resource type="Shader" uid="uid://d2uodu1xq8wop" path="res://shaders/ps1_models.gdshader" id="3_wv1mm"]
 [ext_resource type="Script" uid="uid://db50xrrny0yhk" path="res://scripts/player/interaction_manager.gd" id="4_binfn"]
+[ext_resource type="Script" uid="uid://cqjwf6h3wdw8w" path="res://scripts/player/inventory.gd" id="5_klv5p"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tvfjm"]
 
@@ -93,6 +94,10 @@ transform = Transform3D(0.19049248, 0, 0, 0, 0.17278934, 0, 0, 0, 0.45299405, 0.
 material_override = SubResource("ShaderMaterial_iylwk")
 mesh = SubResource("BoxMesh_rdx4y")
 
-[node name="InteractionManager" type="Node3D" parent="Head/Camera3D" unique_id=479028752]
+[node name="InteractionManager" type="Node3D" parent="Head/Camera3D" unique_id=479028752 node_paths=PackedStringArray("inventory")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 script = ExtResource("4_binfn")
+inventory = NodePath("Inventory")
+
+[node name="Inventory" type="Node" parent="Head/Camera3D/InteractionManager" unique_id=329464308]
+script = ExtResource("5_klv5p")

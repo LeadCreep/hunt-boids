@@ -22,5 +22,6 @@
         "chat-editing-text-model:**/*.mdx": "default",
         "chat-editing-text-model:**/*.mdc": "default",
         "*.ipynb": "jupyter-notebook"
-    }
+    },
+    "godotTools.editorPath.godot4": "e:\\STEAM GAMES\\steamapps\\common\\Godot Engine\\godot.windows.opt.tools.64.exe"
 }
