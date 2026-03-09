@@ -1,6 +1,7 @@
-[gd_scene format=3 uid="uid://de8h4rjndl85e"]
+[gd_scene format=3 uid="uid://8l368o6m7y0f"]
 
 [ext_resource type="Texture2D" uid="uid://dptk1e47lkvpd" path="res://icon.svg" id="1_nt7q6"]
+[ext_resource type="Script" uid="uid://dvp1va0v8yclo" path="res://scripts/player/inventory_ui.gd" id="1_x4jx1"]
 
 [node name="UI" type="Control" unique_id=1975649066]
 layout_mode = 3
@@ -28,7 +29,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
-[node name="Inventory" type="VBoxContainer" parent="." unique_id=1466626622]
+[node name="InventoryUI" type="VBoxContainer" parent="." unique_id=1466626622]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -38,71 +39,73 @@ offset_top = 20.0
 offset_right = -20.0
 offset_bottom = 220.0
 grow_horizontal = 0
+script = ExtResource("1_x4jx1")
 
-[node name="InventorySlot" type="HBoxContainer" parent="Inventory" unique_id=748437382]
+[node name="InventorySlot1" type="HBoxContainer" parent="InventoryUI" unique_id=748437382]
 layout_mode = 2
 alignment = 2
 
-[node name="SlotImage" type="TextureRect" parent="Inventory/InventorySlot" unique_id=1571476825]
+[node name="SlotImage" type="TextureRect" parent="InventoryUI/InventorySlot1" unique_id=1571476825]
 layout_mode = 2
 texture = ExtResource("1_nt7q6")
 expand_mode = 2
 
-[node name="SlotName" type="Label" parent="Inventory/InventorySlot" unique_id=1053905262]
+[node name="SlotName" type="Label" parent="InventoryUI/InventorySlot1" unique_id=1053905262]
 layout_mode = 2
 text = "TEST x "
 
-[node name="SlotCount" type="Label" parent="Inventory/InventorySlot" unique_id=1075383052]
+[node name="SlotCount" type="Label" parent="InventoryUI/InventorySlot1" unique_id=1075383052]
 layout_mode = 2
 text = "0"
 
-[node name="InventorySlot2" type="HBoxContainer" parent="Inventory" unique_id=226824556]
+[node name="InventorySlot2" type="HBoxContainer" parent="InventoryUI" unique_id=226824556]
 layout_mode = 2
 alignment = 2
 
-[node name="SlotImage" type="TextureRect" parent="Inventory/InventorySlot2" unique_id=1599213288]
+[node name="SlotImage" type="TextureRect" parent="InventoryUI/InventorySlot2" unique_id=1599213288]
 layout_mode = 2
 texture = ExtResource("1_nt7q6")
 expand_mode = 2
 
-[node name="SlotName" type="Label" parent="Inventory/InventorySlot2" unique_id=551017275]
+[node name="SlotName" type="Label" parent="InventoryUI/InventorySlot2" unique_id=551017275]
 layout_mode = 2
 text = "TEST x "
 
-[node name="SlotCount" type="Label" parent="Inventory/InventorySlot2" unique_id=1851952359]
+[node name="SlotCount" type="Label" parent="InventoryUI/InventorySlot2" unique_id=1851952359]
 layout_mode = 2
 text = "0"
 
-[node name="InventorySlot3" type="HBoxContainer" parent="Inventory" unique_id=1329354776]
+[node name="InventorySlot3" type="HBoxContainer" parent="InventoryUI" unique_id=1329354776]
 layout_mode = 2
 alignment = 2
 
-[node name="SlotImage" type="TextureRect" parent="Inventory/InventorySlot3" unique_id=1808855414]
+[node name="SlotImage" type="TextureRect" parent="InventoryUI/InventorySlot3" unique_id=1808855414]
 layout_mode = 2
 texture = ExtResource("1_nt7q6")
 expand_mode = 2
 
-[node name="SlotName" type="Label" parent="Inventory/InventorySlot3" unique_id=783683342]
+[node name="SlotName" type="Label" parent="InventoryUI/InventorySlot3" unique_id=783683342]
 layout_mode = 2
 text = "TEST x "
 
-[node name="SlotCount" type="Label" parent="Inventory/InventorySlot3" unique_id=736773326]
+[node name="SlotCount" type="Label" parent="InventoryUI/InventorySlot3" unique_id=736773326]
 layout_mode = 2
 text = "0"
 
-[node name="InventorySlot4" type="HBoxContainer" parent="Inventory" unique_id=1126353560]
+[node name="InventorySlot4" type="HBoxContainer" parent="InventoryUI" unique_id=1126353560]
+visible = false
 layout_mode = 2
 alignment = 2
 
-[node name="SlotImage" type="TextureRect" parent="Inventory/InventorySlot4" unique_id=896348357]
+[node name="SlotImage" type="TextureRect" parent="InventoryUI/InventorySlot4" unique_id=896348357]
 layout_mode = 2
 texture = ExtResource("1_nt7q6")
 expand_mode = 2
 
-[node name="SlotName" type="Label" parent="Inventory/InventorySlot4" unique_id=1995780633]
+[node name="SlotName" type="Label" parent="InventoryUI/InventorySlot4" unique_id=1995780633]
 layout_mode = 2
 text = "TEST x "
 
-[node name="SlotCount" type="Label" parent="Inventory/InventorySlot4" unique_id=976840564]
+[node name="SlotCount" type="Label" parent="InventoryUI/InventorySlot4" unique_id=976840564]
 layout_mode = 2
 text = "0"

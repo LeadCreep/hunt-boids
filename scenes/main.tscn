@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://l1mpt5t06r2b" path="res://textures/crappysky.png" id="1_o6xl0"]
 [ext_resource type="Script" uid="uid://kk4gfqm068l2" path="res://scripts/day_night.gd" id="1_tefeu"]
 [ext_resource type="Shader" uid="uid://d2uodu1xq8wop" path="res://shaders/ps1_models.gdshader" id="2_lquwl"]
-[ext_resource type="PackedScene" path="res://scenes/ui.tscn" id="2_tefeu"]
 [ext_resource type="Shader" uid="uid://bjrjtcf4r1cuc" path="res://shaders/ps1_post_process.gdshader" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://7imd6lg50yim" path="res://prefabs/player/player.tscn" id="4_jyhfs"]
 [ext_resource type="Image" uid="uid://ckpi0eh68brum" path="res://scenes/Scene/Color_0_0.res" id="5_85g3d"]
@@ -115,8 +114,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-
-[node name="UI" parent="CanvasLayer" unique_id=1975649066 instance=ExtResource("2_tefeu")]
 
 [node name="World" type="Node3D" parent="." unique_id=926616253]
 

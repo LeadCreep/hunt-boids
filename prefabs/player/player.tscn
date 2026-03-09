@@ -5,6 +5,7 @@
 [ext_resource type="Shader" uid="uid://d2uodu1xq8wop" path="res://shaders/ps1_models.gdshader" id="3_wv1mm"]
 [ext_resource type="Script" uid="uid://db50xrrny0yhk" path="res://scripts/player/interaction_manager.gd" id="4_binfn"]
 [ext_resource type="Script" uid="uid://cqjwf6h3wdw8w" path="res://scripts/player/inventory.gd" id="5_klv5p"]
+[ext_resource type="PackedScene" uid="uid://8l368o6m7y0f" path="res://scenes/ui.tscn" id="6_iylwk"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tvfjm"]
 
@@ -101,3 +102,5 @@ inventory = NodePath("Inventory")
 
 [node name="Inventory" type="Node" parent="Head/Camera3D/InteractionManager" unique_id=329464308]
 script = ExtResource("5_klv5p")
+
+[node name="UI" parent="Head/Camera3D" unique_id=1975649066 instance=ExtResource("6_iylwk")]
