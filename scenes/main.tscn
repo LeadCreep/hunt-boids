@@ -3,7 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://l1mpt5t06r2b" path="res://textures/crappysky.png" id="1_o6xl0"]
 [ext_resource type="Script" uid="uid://kk4gfqm068l2" path="res://scripts/day_night.gd" id="1_tefeu"]
 [ext_resource type="Shader" uid="uid://d2uodu1xq8wop" path="res://shaders/ps1_models.gdshader" id="2_lquwl"]
+[ext_resource type="PackedScene" uid="uid://cm8jv6lbo7ne1" path="res://prefabs/vendeur.tscn" id="3_a8y0u"]
 [ext_resource type="Shader" uid="uid://bjrjtcf4r1cuc" path="res://shaders/ps1_post_process.gdshader" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://bm6vi8qydwi4f" path="res://scenes/end_screen.tscn" id="3_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://bady80jsa0fuo" path="res://prefabs/weapons/dropped_weapon.tscn" id="3_ya4ey"]
 [ext_resource type="PackedScene" uid="uid://fnqubchby14k" path="res://prefabs/weapons/weapon_axe.tscn" id="4_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://7imd6lg50yim" path="res://prefabs/player/player.tscn" id="4_jyhfs"]
@@ -99,22 +101,13 @@ transform = Transform3D(4.371139e-08, 1, -8.742278e-08, 1, -4.371139e-08, 0, -3.
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Env/SunContainer" unique_id=1142087677]
 transform = Transform3D(-4.371139e-08, 0, -0.99999994, 0, 0.99999994, 0, 1, 0, -4.3711385e-08, 0, 0, 0)
 
-[node name="DayNight" type="Node" parent="Env" unique_id=145494670 node_paths=PackedStringArray("sunlight", "world_environment", "debug_label")]
+[node name="DayNight" type="Node" parent="Env" unique_id=145494670 node_paths=PackedStringArray("sunlight", "world_environment")]
 script = ExtResource("1_tefeu")
 sunlight = NodePath("../SunContainer/DirectionalLight3D")
 world_environment = NodePath("../WorldEnvironment")
 day_duration = 300.0
-debug_label = NodePath("Label")
 time_of_day = 0.25
-
-[node name="Label" type="Label" parent="Env/DayNight" unique_id=1036801487]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 23.0
-grow_horizontal = 2
+end_screen_scene = ExtResource("3_jkv2x")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1186236345]
 
@@ -162,6 +155,19 @@ shape = SubResource("BoxShape3D_tipki")
 
 [node name="Shed" parent="World" unique_id=796392439 instance=ExtResource("9_85g3d")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 5)
+
+[node name="Vendeur" parent="World/Shed" unique_id=379011413 instance=ExtResource("3_a8y0u")]
+transform = Transform3D(-0.39999998, 0, -3.4969112e-08, 0, 0.39999998, 0, 3.4969112e-08, 0, -0.39999998, 0.045172296, 0.8207228, -0.16814208)
+
+[node name="DroppedWeapon" parent="World/Shed" unique_id=1860399720 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(0.6666667, 0, 0, 0, 0.6666667, 0, 0, 0, 0.6666667, 0.7851255, 0.61082864, -0.056001663)
+weapon_scene = ExtResource("4_eb6dy")
+price = 10
+
+[node name="DroppedWeapon2" parent="World/Shed" unique_id=815125906 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(-0.44772762, 0, -0.49394792, 0, 0.6666667, 0, 0.49394792, 0, -0.44772762, -0.79063004, 0.61082864, 0.24154711)
+weapon_scene = ExtResource("10_trceg")
+price = 50
 
 [node name="Rocks" type="Node3D" parent="World" unique_id=1163554711]
 
@@ -548,16 +554,6 @@ weapon_scene = ExtResource("9_eb6dy")
 [node name="DroppedWeapon38" parent="World/Rocks" unique_id=1776990131 instance=ExtResource("3_ya4ey")]
 transform = Transform3D(0.7930132, 0, -0.6092044, 0, 1, 0, 0.6092044, 0, 0.7930132, 33.50467, 0.19624591, 40.314922)
 weapon_scene = ExtResource("9_eb6dy")
-
-[node name="DroppedWeapon" parent="World" unique_id=1860399720 instance=ExtResource("3_ya4ey")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1776882, 0.91624296, 4.9159975)
-weapon_scene = ExtResource("4_eb6dy")
-price = 10
-
-[node name="DroppedWeapon2" parent="World" unique_id=815125906 instance=ExtResource("3_ya4ey")]
-transform = Transform3D(-0.6715914, 0, -0.74092185, 0, 1, 0, 0.74092185, 0, -0.6715914, -1.185945, 0.91624296, 5.362321)
-weapon_scene = ExtResource("10_trceg")
-price = 50
 
 [node name="Player" parent="." unique_id=625775103 instance=ExtResource("4_jyhfs")]
 transform = Transform3D(-1, 0, -5.9604645e-08, 0, 1, 0, 5.9604645e-08, 0, -1, 0, 1, -6)

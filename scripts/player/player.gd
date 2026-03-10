@@ -1,4 +1,5 @@
 extends CharacterBody3D
+class_name Player
 
 var speed
 const WALK_SPEED = 5.0
@@ -22,6 +23,10 @@ const FOV_CHANGE = 1.5
 @onready var weapon_manager = $Head/Camera3D/WeaponManager
 @onready var weapon_point = $Head/Camera3D/WeaponManager/WeaponPoint
 
+var score: int = 0
+
+var fullscreen: bool = false
+
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED);
 
@@ -40,6 +45,10 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 	if event.is_action_pressed("ui_accept"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
+	if event.is_action_pressed("fullscreen"):
+		fullscreen = not fullscreen
+		toggle_fullscreen()
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
@@ -78,3 +87,13 @@ func _headbob(time) -> Vector3:
 	pos.y = sin(time * BOB_FREQ) * BOB_AMP * int(bobing);
 	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP * int(bobing_lr);
 	return pos
+
+func add_score(points: int) -> void:
+	score += points
+
+
+func toggle_fullscreen():
+	if fullscreen:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)

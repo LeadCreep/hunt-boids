@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cm8jv6lbo7ne1"]
+
+[ext_resource type="Script" uid="uid://kw0dj6wntgcb" path="res://scripts/vendeur.gd" id="1_iglly"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5bfoq"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_p2uan"]
+
+[node name="Vendeur" type="CharacterBody3D" unique_id=379011413]
+collision_layer = 8
+script = ExtResource("1_iglly")
+interraction_hint = "[E] Vendre drones"
+metadata/_custom_type_script = "uid://cr8mquiod71xy"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2024588029]
+shape = SubResource("BoxShape3D_5bfoq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1830074227]
+mesh = SubResource("BoxMesh_p2uan")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=221194920]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5059097)
+text = "Vendre"

@@ -37,8 +37,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 script = ExtResource("4_binfn")
 inventory = NodePath("Inventory")
 
-[node name="Inventory" type="Node" parent="Head/Camera3D/InteractionManager" unique_id=329464308 node_paths=PackedStringArray("ui")]
+[node name="Inventory" type="Node" parent="Head/Camera3D/InteractionManager" unique_id=329464308 node_paths=PackedStringArray("ui", "player")]
 script = ExtResource("5_klv5p")
 ui = NodePath("../../UI")
+player = NodePath("../../../..")
 
 [node name="UI" parent="Head/Camera3D" unique_id=1975649066 instance=ExtResource("6_iylwk")]

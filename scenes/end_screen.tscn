@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://bm6vi8qydwi4f"]
+
+[ext_resource type="Script" uid="uid://dc2qvquyvfgks" path="res://scripts/end_screen.gd" id="1_kq7ac"]
+
+[node name="EndScreen" type="Control" unique_id=464842525 node_paths=PackedStringArray("score_label")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kq7ac")
+score_label = NodePath("Score")
+
+[node name="Label" type="Label" parent="." unique_id=555136676]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -50.0
+offset_top = 122.0
+offset_right = 50.0
+offset_bottom = 177.25
+grow_horizontal = 2
+text = "Bien joué !"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="." unique_id=1962543923]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -50.0
+offset_top = 175.0
+offset_right = 50.0
+offset_bottom = 230.25
+grow_horizontal = 2
+text = "Score :"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="." unique_id=1135000286]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -50.0
+offset_top = 307.0
+offset_right = 50.0
+offset_bottom = 362.25
+grow_horizontal = 2
+text = "[R] pour réessayer"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Score" type="Label" parent="." unique_id=1086558699]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -50.0
+offset_top = 217.0
+offset_right = 50.0
+offset_bottom = 272.25
+grow_horizontal = 2
+text = "0
+"
+horizontal_alignment = 1
+vertical_alignment = 1

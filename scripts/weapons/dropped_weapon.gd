@@ -49,6 +49,7 @@ func get_used(_inv: Inventory) -> void:
 	if _inv.counter_capsule < price:
 		return
 	_inv.counter_capsule -= price
+	_inv.inventory_ui.update_ui(_inv)
 	price = 0
 	_inv.add_weapon(weapon_scene)
 	queue_free()

@@ -3,22 +3,33 @@ extends Node
 @export var sunlight: DirectionalLight3D
 @export var world_environment: WorldEnvironment
 @export var day_duration: float = 20.0
-@export var debug_label: Label
 
 @export var time_of_day: float = 0.0
 
+@export var end_screen_scene: PackedScene
+
+var stopped: bool = false
+
+
 func _ready() -> void:
 	sunlight.rotation_degrees.x = time_of_day * 360.0
+	
 
 func _process(delta: float) -> void:
+	if stopped:
+		return
+
 	time_of_day += (delta / day_duration)
 
-	if time_of_day >= 1.0:
-		time_of_day -= 1.0
-	
+	if time_of_day >= 0.75:
+		var end_screen = end_screen_scene.instantiate() as Control
+		end_screen.set_score($"../../Player".score)
+		get_tree().root.add_child(end_screen)
+		$"../../Player".queue_free()
+		stopped = true
+
 	sunlight.rotation_degrees.x = time_of_day * 360.0
 	_update_environment()
-	debug_label.text = get_clock_time()
 
 
 func _update_environment() -> void:

@@ -2,6 +2,7 @@ extends Node
 class_name Inventory
 
 @export var ui: UI
+@export var player: Player
 var inventory_ui: InventoryUI = null
 
 var slot1_count: int = 0
@@ -25,4 +26,10 @@ func add_boid(boid_type: String) -> void:
 			slot2_count += 1
 		"Legendary":
 			slot3_count += 1
+	inventory_ui.update_ui(self as Inventory)
+
+
+func add_capsule(count: int) -> void:
+	counter_capsule += count
+	player.add_score(count)
 	inventory_ui.update_ui(self as Inventory)
