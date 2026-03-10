@@ -12,33 +12,37 @@ shader_parameter/snap_resolution = 256.0
 shader_parameter/affine_weight = 0.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_c3uq4"]
-size = Vector3(2.8738098, 1.859375, 2.071167)
+size = Vector3(2.8738098, 0.4326172, 2.071167)
 
 [node name="blockbench_export" unique_id=796392439 instance=ExtResource("1_c3uq4")]
 
-[node name="cube" parent="." index="0" unique_id=1362565306]
+[node name="cube" parent="." index="0" unique_id=514312098]
 material_override = SubResource("ShaderMaterial_num2l")
 
-[node name="cube2" parent="." index="1" unique_id=2135018354]
+[node name="cube2" parent="." index="1" unique_id=1644124765]
 material_override = SubResource("ShaderMaterial_num2l")
 
-[node name="cube3" parent="." index="2" unique_id=1847728358]
+[node name="cube3" parent="." index="2" unique_id=1973134421]
 material_override = SubResource("ShaderMaterial_num2l")
 
-[node name="cube4" parent="." index="3" unique_id=277122643]
+[node name="cube4" parent="." index="3" unique_id=968731138]
 material_override = SubResource("ShaderMaterial_num2l")
 
-[node name="cube5" parent="." index="4" unique_id=1375921652]
+[node name="cube5" parent="." index="4" unique_id=1596642455]
 material_override = SubResource("ShaderMaterial_num2l")
 
-[node name="cube6" parent="." index="5" unique_id=84374557]
+[node name="cube6" parent="." index="5" unique_id=1266807929]
 material_override = SubResource("ShaderMaterial_num2l")
 
-[node name="cube7" parent="." index="6" unique_id=967364130]
+[node name="cube7" parent="." index="6" unique_id=717455937]
 material_override = SubResource("ShaderMaterial_num2l")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="7" unique_id=1287181584]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=369308726]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0036468506, 1.0256019, 0.44036865)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0036468506, 0.31222296, 0.44036865)
+shape = SubResource("BoxShape3D_c3uq4")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="1" unique_id=1528186366]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0036468506, 1.5645303, 0.44036865)
 shape = SubResource("BoxShape3D_c3uq4")

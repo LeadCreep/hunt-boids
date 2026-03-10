@@ -7,10 +7,8 @@ extends Node
 
 @export var time_of_day: float = 0.0
 
-
 func _ready() -> void:
-	_update_environment()
-
+	sunlight.rotation_degrees.x = time_of_day * 360.0
 
 func _process(delta: float) -> void:
 	time_of_day += (delta / day_duration)
@@ -46,4 +44,4 @@ func get_clock_time() -> String:
 	var total_minutes: int = int(time_of_day * 24.0 * 60.0)
 	var hours: int = int(float(total_minutes) / 60.0)
 	var minutes: int = total_minutes % 60
-	return "%02d:%02d" % [hours, minutes]
+	return "%02d:%02d : %.2f" % [hours, minutes, time_of_day]

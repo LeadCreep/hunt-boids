@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://fnqubchby14k"]
+
+[ext_resource type="Script" uid="uid://qmirw24nhwug" path="res://scripts/weapons/weapon.gd" id="1_s5u8j"]
+[ext_resource type="Texture2D" uid="uid://b88tuiiniv5w6" path="res://models/axe/Axe_deg.png" id="2_oj2pt"]
+[ext_resource type="ArrayMesh" uid="uid://c6t4llom4tmhr" path="res://models/axe/model_0.obj" id="3_rdos5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cfwhn"]
+albedo_texture = ExtResource("2_oj2pt")
+
+[node name="WeaponAxe" type="Node3D" unique_id=1817956821]
+script = ExtResource("1_s5u8j")
+metadata/_custom_type_script = "uid://qmirw24nhwug"
+
+[node name="Model" type="MeshInstance3D" parent="." unique_id=537679266]
+transform = Transform3D(0.08, 0, 0, 0, -0.004047433, 0.079897545, 0, -0.079897545, -0.004047433, 0.3179441, -0.24058005, 0)
+material_override = SubResource("StandardMaterial3D_cfwhn")
+mesh = ExtResource("3_rdos5")

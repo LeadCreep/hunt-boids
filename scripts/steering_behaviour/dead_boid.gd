@@ -1,4 +1,4 @@
-extends CharacterBody3D
+extends Interractable
 
 var on_floor: bool = false
 
@@ -18,7 +18,6 @@ func _physics_process(delta: float) -> void:
 
 	if velocity.length() > 0.1:
 		look_at(global_position + velocity, Vector3.UP)
-
 
 	var collision_info = move_and_collide(velocity * delta)
 	if collision_info:

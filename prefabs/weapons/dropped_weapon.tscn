@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bady80jsa0fuo"]
+
+[ext_resource type="Script" uid="uid://dl3j4fptx3ql1" path="res://scripts/weapons/dropped_weapon.gd" id="1_e16nv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e16nv"]
+size = Vector3(1, 0.3764038, 1)
+
+[node name="DroppedWeapon" type="CharacterBody3D" unique_id=808177832]
+collision_layer = 4
+script = ExtResource("1_e16nv")
+interraction_hint = "[E] Pick Up"
+metadata/_custom_type_script = "uid://cr8mquiod71xy"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=733144858]
+shape = SubResource("BoxShape3D_e16nv")

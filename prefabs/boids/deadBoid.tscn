@@ -5,10 +5,11 @@
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_gagrk"]
 points = PackedVector3Array(-9.787083e-05, 1, -9.787083e-05, 0.13390762, 0, -0.5, -0.13400549, 0, -0.5, -0.36609238, 0, -0.36609238, -0.5, 0, -0.13400549, -0.5, 0, 0.13390762, -0.36609238, 0, 0.3659945, -0.13400549, 0, 0.5, 0.13390762, 0, 0.5, 0.3659945, 0, 0.3659945, 0.5, 0, 0.13390762, 0.5, 0, -0.13400549, 0.3659945, 0, -0.36609238)
 
-[node name="DeadBoid" type="CharacterBody3D" unique_id=737267659]
+[node name="DeadBoid" type="RigidBody3D" unique_id=315870062]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
 collision_layer = 4
 script = ExtResource("1_32te3")
+interraction_hint = "[E] Collect"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=802242986]
 transform = Transform3D(1.9106855e-15, 4.371139e-08, -1, 1, -4.371139e-08, 0, -4.371139e-08, -1, -4.371139e-08, 0, 0, 0)
