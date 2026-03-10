@@ -1,8 +1,13 @@
 [gd_scene format=3 uid="uid://d01auaahtb44i"]
 
 [ext_resource type="PackedScene" uid="uid://nx6ojju7mssb" path="res://models/boids/Drone.gltf" id="1_5das3"]
-[ext_resource type="Material" uid="uid://bpe07rha64c5d" path="res://models/boids/DroneCommon.tres" id="2_4wh6b"]
 [ext_resource type="Script" uid="uid://iulust30k1j" path="res://scripts/drone.gd" id="2_udnu6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4wh6b"]
+resource_local_to_scene = true
+albedo_color = Color(1, 0, 0, 1)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
 
 [node name="blockbench_export" unique_id=166426223 node_paths=PackedStringArray("rarity_torus_1", "rarity_torus_2") instance=ExtResource("1_5das3")]
 script = ExtResource("2_udnu6")
@@ -10,7 +15,7 @@ rarity_torus_1 = NodePath("root/Rarity/torus3")
 rarity_torus_2 = NodePath("root/Rarity/torus4")
 
 [node name="torus3" parent="root/Rarity" parent_id_path=PackedInt32Array(1057424146) index="0" unique_id=1022521074]
-material_override = ExtResource("2_4wh6b")
+material_override = SubResource("StandardMaterial3D_4wh6b")
 
 [node name="torus4" parent="root/Rarity" parent_id_path=PackedInt32Array(1057424146) index="1" unique_id=257508135]
-material_override = ExtResource("2_4wh6b")
+material_override = SubResource("StandardMaterial3D_4wh6b")

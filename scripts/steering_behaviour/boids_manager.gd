@@ -54,6 +54,13 @@ func spawn_boid(pos: Vector3) -> void:
 	boid_instance.load_ressource(boid_ressources[random_index])
 	add_child(boid_instance)
 	boid_instance.global_position = pos
+	match random_index:
+		0:
+			boid_instance.rarity = "Common"
+		1:
+			boid_instance.rarity = "Rare"
+		2:
+			boid_instance.rarity = "Legendary"
 	boids.append(boid_instance)
 
 func random_chance_boid_spawn() -> int:

@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://cja88l8m0smps"]
+
+[ext_resource type="Script" uid="uid://qmirw24nhwug" path="res://scripts/weapons/weapon.gd" id="1_etxjj"]
+[ext_resource type="Texture2D" uid="uid://y6y7tix11c4g" path="res://models/rifle/Cylinder Base Color_0.png" id="1_xtx8g"]
+[ext_resource type="ArrayMesh" uid="uid://yjdpctxjx7oi" path="res://models/rifle/model_0.obj" id="2_etxjj"]
+[ext_resource type="Texture2D" uid="uid://b2bsxnkihgs88" path="res://models/rifle/Cylinder_1.png" id="3_jfnom"]
+[ext_resource type="ArrayMesh" uid="uid://c7jjid6cmlyq8" path="res://models/rifle/model_1.obj" id="4_qn8dv"]
+[ext_resource type="Texture2D" uid="uid://dj2a8wi1ltjyw" path="res://models/rifle/Cube Base Color_4.png" id="5_uliov"]
+[ext_resource type="ArrayMesh" uid="uid://dnay632g7v26q" path="res://models/rifle/model_2.obj" id="6_nuk8k"]
+[ext_resource type="Texture2D" uid="uid://svwf5elh3s0v" path="res://models/rifle/Cube_2.png" id="7_krw35"]
+[ext_resource type="ArrayMesh" uid="uid://i8noe84hk5v2" path="res://models/rifle/model_3.obj" id="8_qh6ui"]
+[ext_resource type="Texture2D" uid="uid://cnwqjkuqt685a" path="res://models/rifle/Cube_3.png" id="9_n2phu"]
+[ext_resource type="ArrayMesh" uid="uid://bd5rhws75wfks" path="res://models/rifle/model_4.obj" id="10_bad17"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hx11s"]
+albedo_texture = ExtResource("1_xtx8g")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yla7j"]
+albedo_texture = ExtResource("3_jfnom")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rfxqw"]
+albedo_texture = ExtResource("5_uliov")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_csaaa"]
+albedo_texture = ExtResource("7_krw35")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pkylo"]
+albedo_texture = ExtResource("9_n2phu")
+
+[node name="WeaponRifle" type="Node3D" unique_id=24057174]
+script = ExtResource("1_etxjj")
+weapon_type = 1
+metadata/_custom_type_script = "uid://qmirw24nhwug"
+
+[node name="Mesh" type="Node3D" parent="." unique_id=310236829]
+
+[node name="Model0" type="MeshInstance3D" parent="Mesh" unique_id=554221873]
+transform = Transform3D(-0.2, 0, -1.7484556e-08, 0, 0.2, 0, 1.7484556e-08, 0, -0.2, 0, 0, -1.6112043)
+material_override = SubResource("StandardMaterial3D_hx11s")
+mesh = ExtResource("2_etxjj")
+
+[node name="Model1" type="MeshInstance3D" parent="Mesh" unique_id=1466001331]
+transform = Transform3D(-0.2, 0, -1.7484556e-08, 0, 0.2, 0, 1.7484556e-08, 0, -0.2, 0, 0, -1.6112043)
+material_override = SubResource("StandardMaterial3D_yla7j")
+mesh = ExtResource("4_qn8dv")
+
+[node name="Model2" type="MeshInstance3D" parent="Mesh" unique_id=2080192708]
+transform = Transform3D(-0.2, 0, -1.7484556e-08, 0, 0.2, 0, 1.7484556e-08, 0, -0.2, 0, 0, -1.6112043)
+material_override = SubResource("StandardMaterial3D_rfxqw")
+mesh = ExtResource("6_nuk8k")
+
+[node name="Model3" type="MeshInstance3D" parent="Mesh" unique_id=796529039]
+transform = Transform3D(-0.2, 0, -1.7484556e-08, 0, 0.2, 0, 1.7484556e-08, 0, -0.2, 0, 0, -1.6112043)
+material_override = SubResource("StandardMaterial3D_csaaa")
+mesh = ExtResource("8_qh6ui")
+
+[node name="Model4" type="MeshInstance3D" parent="Mesh" unique_id=1719738418]
+transform = Transform3D(-0.2, 0, -1.7484556e-08, 0, 0.2, 0, 1.7484556e-08, 0, -0.2, 0, 0, -1.6112043)
+material_override = SubResource("StandardMaterial3D_pkylo")
+mesh = ExtResource("10_bad17")

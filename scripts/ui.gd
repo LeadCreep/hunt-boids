@@ -1,8 +1,8 @@
 extends Control
 class_name UI
 
-@onready var inventory_UI: InventoryUI = $InventoryUI
-@onready var interaction_hint_label: Label = $InteractionHint
+@export var inventory_UI: InventoryUI
+@onready var interaction_hint_label: Label = $"./InteractionHint"
 
 func _ready() -> void:
 	pass

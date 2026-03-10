@@ -6,7 +6,8 @@
 size = Vector3(1, 0.3764038, 1)
 
 [node name="DroppedWeapon" type="CharacterBody3D" unique_id=808177832]
-collision_layer = 4
+collision_layer = 8
+collision_mask = 5
 script = ExtResource("1_e16nv")
 interraction_hint = "[E] Pick Up"
 metadata/_custom_type_script = "uid://cr8mquiod71xy"

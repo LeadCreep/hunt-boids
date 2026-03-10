@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bcb7xbqmlvm3s" path="res://scripts/player/player.gd" id="1_sxsrd"]
 [ext_resource type="Script" uid="uid://wm5fmmpfebl5" path="res://scripts/player/weapon_manager.gd" id="2_rdx4y"]
-[ext_resource type="PackedScene" uid="uid://fnqubchby14k" path="res://prefabs/weapons/weapon_axe.tscn" id="3_iylwk"]
+[ext_resource type="PackedScene" uid="uid://bady80jsa0fuo" path="res://prefabs/weapons/dropped_weapon.tscn" id="3_iylwk"]
 [ext_resource type="Script" uid="uid://db50xrrny0yhk" path="res://scripts/player/interaction_manager.gd" id="4_binfn"]
 [ext_resource type="Script" uid="uid://cqjwf6h3wdw8w" path="res://scripts/player/inventory.gd" id="5_klv5p"]
 [ext_resource type="PackedScene" uid="uid://8l368o6m7y0f" path="res://scenes/ui.tscn" id="6_iylwk"]
@@ -23,15 +23,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="RayCast3D" type="RayCast3D" parent="Head/Camera3D" unique_id=554948876]
 target_position = Vector3(0, 0, -10)
-collision_mask = 4
+collision_mask = 28
 
 [node name="WeaponManager" type="Node3D" parent="Head/Camera3D" unique_id=1387510208]
 script = ExtResource("2_rdx4y")
+dropped_weapon_scene = ExtResource("3_iylwk")
 
 [node name="WeaponPoint" type="Node3D" parent="Head/Camera3D/WeaponManager" unique_id=2109125071]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.27075052, -0.21263438, -0.65565825)
-
-[node name="Weapon" parent="Head/Camera3D/WeaponManager/WeaponPoint" unique_id=1817956821 instance=ExtResource("3_iylwk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.44513643, -0.21263438, -0.65565825)
 
 [node name="InteractionManager" type="Node3D" parent="Head/Camera3D" unique_id=479028752 node_paths=PackedStringArray("inventory")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)

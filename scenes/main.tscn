@@ -11,6 +11,8 @@
 [ext_resource type="Script" uid="uid://2lg6i40tfwpl" path="res://scripts/steering_behaviour/boids_manager.gd" id="5_tbgi4"]
 [ext_resource type="Image" uid="uid://dger7coxjk772" path="res://scenes/Scene/Heightmap_0_0.res" id="5_tipki"]
 [ext_resource type="PackedScene" uid="uid://drxlxp154txpr" path="res://prefabs/shed.tscn" id="9_85g3d"]
+[ext_resource type="PackedScene" uid="uid://c2p2orkp5ldsd" path="res://prefabs/weapons/weapon_rock.tscn" id="9_eb6dy"]
+[ext_resource type="PackedScene" uid="uid://cja88l8m0smps" path="res://prefabs/weapons/weapon_rifle.tscn" id="10_trceg"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_tbgi4"]
 mie_coefficient = 0.055
@@ -48,7 +50,7 @@ zones = Array[ZoneResource]([SubResource("ZoneResource_85g3d")])
 size = Vector3(256, 35, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tbgi4"]
-size = Vector3(250, 50, 250)
+size = Vector3(250, 22.851501, 250)
 
 [sub_resource type="Gradient" id="Gradient_tefeu"]
 offsets = PackedFloat32Array(0)
@@ -161,9 +163,401 @@ shape = SubResource("BoxShape3D_tipki")
 [node name="Shed" parent="World" unique_id=796392439 instance=ExtResource("9_85g3d")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 5)
 
-[node name="DroppedWeapon" parent="World" unique_id=1166827839 instance=ExtResource("3_ya4ey")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5671434, 1.8224247, -4.293199)
+[node name="Rocks" type="Node3D" parent="World" unique_id=1163554711]
+
+[node name="DroppedWeapon2" parent="World/Rocks" unique_id=808177832 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.953661, 0.19624591, -3.1466765)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon3" parent="World/Rocks" unique_id=312712463 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.377836, 0.19624591, -3.1466765)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon4" parent="World/Rocks" unique_id=1209822695 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.51036453, 0.19624591, -3.1466765)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon6" parent="World/Rocks" unique_id=1186722763 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.228897, 0.19624591, -3.1466765)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon7" parent="World/Rocks" unique_id=90543926 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5380173, 0.19624591, -3.1466765)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon8" parent="World/Rocks" unique_id=507147799 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.228897, 0.19624591, -3.1466765)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon9" parent="World/Rocks" unique_id=1804672052 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.60955, 0.19624591, -3.1466765)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon10" parent="World/Rocks" unique_id=697635233 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.443607, 0.19624591, -3.1466765)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon11" parent="World/Rocks" unique_id=129552771 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.17526, 0.19624591, -3.1466765)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon12" parent="World/Rocks" unique_id=608491702 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(0.7667956, 0, 0.6418914, 0, 1, 0, -0.6418914, 0, 0.7667956, 11.618994, 0.19624591, -16.815702)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon13" parent="World/Rocks" unique_id=1757358086 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(0.7667956, 0, 0.6418914, 0, 1, 0, -0.6418914, 0, 0.7667956, 5.809885, 0.19624591, -11.952845)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon14" parent="World/Rocks" unique_id=264720270 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(0.7667956, 0, 0.6418914, 0, 1, 0, -0.6418914, 0, 0.7667956, 2.07753, 0.19624591, -8.828457)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon15" parent="World/Rocks" unique_id=1759928046 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(0.7667956, 0, 0.6418914, 0, 1, 0, -0.6418914, 0, 0.7667956, -9.991268, 0.19624591, 1.2744398)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon16" parent="World/Rocks" unique_id=1577129655 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(0.7667956, 0, 0.6418914, 0, 1, 0, -0.6418914, 0, 0.7667956, -4.093935, 0.19624591, -3.6622696)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon17" parent="World/Rocks" unique_id=207579986 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(0.7667956, 0, 0.6418914, 0, 1, 0, -0.6418914, 0, 0.7667956, -17.659222, 0.19624591, 7.6933537)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon18" parent="World/Rocks" unique_id=1600551128 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(0.7667956, 0, 0.6418914, 0, 1, 0, -0.6418914, 0, 0.7667956, 20.556679, 0.19624591, -24.297518)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon19" parent="World/Rocks" unique_id=1880854935 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(0.7667956, 0, 0.6418914, 0, 1, 0, -0.6418914, 0, 0.7667956, 25.797005, 0.19624591, -28.68424)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon20" parent="World/Rocks" unique_id=1353985670 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(0.7667956, 0, 0.6418914, 0, 1, 0, -0.6418914, 0, 0.7667956, 30.958805, 0.19624591, -33.00523)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon21" parent="World/Rocks" unique_id=1966476561 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(0.7930132, 0, -0.6092044, 0, 1, 0, 0.6092044, 0, 0.7930132, 32.53636, 0.19624591, 26.096336)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon22" parent="World/Rocks" unique_id=281794293 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(0.7930132, 0, -0.6092044, 0, 1, 0, 0.6092044, 0, 0.7930132, 26.52863, 0.19624591, 21.48111)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon5" parent="World/Rocks" unique_id=636065463 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(-0.24285324, 0, 0.97006303, 0, 1, 0, -0.97006303, 0, -0.24285324, 25.321083, 0.19624591, -14.083993)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon39" parent="World/Rocks" unique_id=1405347675 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(-0.24285324, 0, 0.97006303, 0, 1, 0, -0.97006303, 0, -0.24285324, 27.160898, 0.19624591, -6.7349653)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon40" parent="World/Rocks" unique_id=1151159860 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(-0.24285324, 0, 0.97006303, 0, 1, 0, -0.97006303, 0, -0.24285324, 28.34298, 0.19624591, -2.0132113)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon41" parent="World/Rocks" unique_id=2086133665 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(-0.24285324, 0, 0.97006303, 0, 1, 0, -0.97006303, 0, -0.24285324, 32.16531, 0.19624591, 13.254866)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon42" parent="World/Rocks" unique_id=971798467 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(-0.24285324, 0, 0.97006303, 0, 1, 0, -0.97006303, 0, -0.24285324, 30.297554, 0.19624591, 5.7942266)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon43" parent="World/Rocks" unique_id=1880894453 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(-0.24285324, 0, 0.97006303, 0, 1, 0, -0.97006303, 0, -0.24285324, 34.59384, 0.19624591, 22.955496)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon44" parent="World/Rocks" unique_id=191187785 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(-0.24285324, 0, 0.97006303, 0, 1, 0, -0.97006303, 0, -0.24285324, 22.490414, 0.19624591, -25.39094)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon45" parent="World/Rocks" unique_id=1026644118 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(-0.24285324, 0, 0.97006303, 0, 1, 0, -0.97006303, 0, -0.24285324, 20.830742, 0.19624591, -32.02041)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon46" parent="World/Rocks" unique_id=1384948367 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(-0.24285324, 0, 0.97006303, 0, 1, 0, -0.97006303, 0, -0.24285324, 19.195938, 0.19624591, -38.55053)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon47" parent="World/Rocks" unique_id=1841279391 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(-0.8088939, 0, 0.58795464, 0, 1, 0, -0.58795464, 0, -0.8088939, 12.385395, 0.19624591, -9.469715)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon48" parent="World/Rocks" unique_id=1774387761 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(-0.8088939, 0, 0.58795464, 0, 1, 0, -0.58795464, 0, -0.8088939, 18.513435, 0.19624591, -5.015474)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon49" parent="World/Rocks" unique_id=210976016 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(-0.8088939, 0, 0.58795464, 0, 1, 0, -0.58795464, 0, -0.8088939, 22.450703, 0.19624591, -2.1536217)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon50" parent="World/Rocks" unique_id=355419684 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(-0.8088939, 0, 0.58795464, 0, 1, 0, -0.58795464, 0, -0.8088939, 35.1821, 0.19624591, 7.1003523)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon51" parent="World/Rocks" unique_id=1196071195 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(-0.8088939, 0, 0.58795464, 0, 1, 0, -0.58795464, 0, -0.8088939, 28.96099, 0.19624591, 2.5784626)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon52" parent="World/Rocks" unique_id=1450661623 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(-0.8088939, 0, 0.58795464, 0, 1, 0, -0.58795464, 0, -0.8088939, 43.271034, 0.19624591, 12.979898)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon53" parent="World/Rocks" unique_id=1834278927 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(-0.8088939, 0, 0.58795464, 0, 1, 0, -0.58795464, 0, -0.8088939, 2.957017, 0.19624591, -16.32285)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon54" parent="World/Rocks" unique_id=1606175553 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(-0.8088939, 0, 0.58795464, 0, 1, 0, -0.58795464, 0, -0.8088939, -2.5710125, 0.19624591, -20.340965)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon55" parent="World/Rocks" unique_id=118241525 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(-0.8088939, 0, 0.58795464, 0, 1, 0, -0.58795464, 0, -0.8088939, -8.016199, 0.19624591, -24.29887)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon56" parent="World/Rocks" unique_id=341320752 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(0.39838088, 0, 0.91722006, 0, 1, 0, -0.91722006, 0, 0.39838088, 48.93293, 0.19624591, -40.182205)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon57" parent="World/Rocks" unique_id=634889112 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(0.39838088, 0, 0.91722006, 0, 1, 0, -0.91722006, 0, 0.39838088, 45.914864, 0.19624591, -33.233505)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon58" parent="World/Rocks" unique_id=2081867834 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(-0.24285324, 0, 0.97006303, 0, 1, 0, -0.97006303, 0, -0.24285324, -12.106575, 0.19624591, 14.163283)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon59" parent="World/Rocks" unique_id=1606755867 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(-0.24285324, 0, 0.97006303, 0, 1, 0, -0.97006303, 0, -0.24285324, -10.26676, 0.19624591, 21.51231)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon60" parent="World/Rocks" unique_id=1401044503 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(-0.24285324, 0, 0.97006303, 0, 1, 0, -0.97006303, 0, -0.24285324, -9.084679, 0.19624591, 26.234066)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon61" parent="World/Rocks" unique_id=516288583 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(-0.24285324, 0, 0.97006303, 0, 1, 0, -0.97006303, 0, -0.24285324, -5.262348, 0.19624591, 41.502144)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon62" parent="World/Rocks" unique_id=1400572045 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(-0.24285324, 0, 0.97006303, 0, 1, 0, -0.97006303, 0, -0.24285324, -7.130104, 0.19624591, 34.041504)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon63" parent="World/Rocks" unique_id=765374033 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(-0.24285324, 0, 0.97006303, 0, 1, 0, -0.97006303, 0, -0.24285324, -2.8338165, 0.19624591, 51.202774)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon64" parent="World/Rocks" unique_id=1901263354 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(-0.24285324, 0, 0.97006303, 0, 1, 0, -0.97006303, 0, -0.24285324, -14.937244, 0.19624591, 2.8563366)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon65" parent="World/Rocks" unique_id=1000172814 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(-0.24285324, 0, 0.97006303, 0, 1, 0, -0.97006303, 0, -0.24285324, -16.596916, 0.19624591, -3.7731323)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon66" parent="World/Rocks" unique_id=208931095 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(-0.24285324, 0, 0.97006303, 0, 1, 0, -0.97006303, 0, -0.24285324, -18.23172, 0.19624591, -10.303253)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon67" parent="World/Rocks" unique_id=286867707 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(-0.8088939, 0, 0.58795464, 0, 1, 0, -0.58795464, 0, -0.8088939, -25.042263, 0.19624591, 18.777561)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon68" parent="World/Rocks" unique_id=2126654742 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(-0.8088939, 0, 0.58795464, 0, 1, 0, -0.58795464, 0, -0.8088939, -18.914223, 0.19624591, 23.231802)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon69" parent="World/Rocks" unique_id=652883302 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(-0.8088939, 0, 0.58795464, 0, 1, 0, -0.58795464, 0, -0.8088939, -14.976955, 0.19624591, 26.093655)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon70" parent="World/Rocks" unique_id=56582316 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(-0.8088939, 0, 0.58795464, 0, 1, 0, -0.58795464, 0, -0.8088939, -2.2455597, 0.19624591, 35.34763)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon71" parent="World/Rocks" unique_id=1993693831 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(-0.8088939, 0, 0.58795464, 0, 1, 0, -0.58795464, 0, -0.8088939, -8.466667, 0.19624591, 30.825739)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon72" parent="World/Rocks" unique_id=459101961 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(-0.8088939, 0, 0.58795464, 0, 1, 0, -0.58795464, 0, -0.8088939, 5.843376, 0.19624591, 41.227173)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon73" parent="World/Rocks" unique_id=539525853 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(-0.8088939, 0, 0.58795464, 0, 1, 0, -0.58795464, 0, -0.8088939, -34.470642, 0.19624591, 11.924427)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon74" parent="World/Rocks" unique_id=1177716975 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(-0.8088939, 0, 0.58795464, 0, 1, 0, -0.58795464, 0, -0.8088939, -39.998672, 0.19624591, 7.906311)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon75" parent="World/Rocks" unique_id=1007413977 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(-0.8088939, 0, 0.58795464, 0, 1, 0, -0.58795464, 0, -0.8088939, -45.443855, 0.19624591, 3.9484062)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon76" parent="World/Rocks" unique_id=2071468120 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(0.39838088, 0, 0.91722006, 0, 1, 0, -0.91722006, 0, 0.39838088, 11.505272, 0.19624591, -11.934929)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon77" parent="World/Rocks" unique_id=1519303078 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(0.39838088, 0, 0.91722006, 0, 1, 0, -0.91722006, 0, 0.39838088, 8.4872055, 0.19624591, -4.986229)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon78" parent="World/Rocks" unique_id=1878881851 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(-0.24285324, 0, 0.97006303, 0, 1, 0, -0.97006303, 0, -0.24285324, -19.110126, 0.19624591, -35.402958)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon79" parent="World/Rocks" unique_id=1317812411 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(-0.24285324, 0, 0.97006303, 0, 1, 0, -0.97006303, 0, -0.24285324, -17.270313, 0.19624591, -28.053932)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon80" parent="World/Rocks" unique_id=1592316876 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(-0.24285324, 0, 0.97006303, 0, 1, 0, -0.97006303, 0, -0.24285324, -16.08823, 0.19624591, -23.332176)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon81" parent="World/Rocks" unique_id=1294043568 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(-0.24285324, 0, 0.97006303, 0, 1, 0, -0.97006303, 0, -0.24285324, -12.265901, 0.19624591, -8.064098)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon82" parent="World/Rocks" unique_id=952500396 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(-0.24285324, 0, 0.97006303, 0, 1, 0, -0.97006303, 0, -0.24285324, -14.1336565, 0.19624591, -15.524738)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon83" parent="World/Rocks" unique_id=58700893 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(-0.24285324, 0, 0.97006303, 0, 1, 0, -0.97006303, 0, -0.24285324, -9.837369, 0.19624591, 1.6365318)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon84" parent="World/Rocks" unique_id=1704287963 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(-0.24285324, 0, 0.97006303, 0, 1, 0, -0.97006303, 0, -0.24285324, -21.940796, 0.19624591, -46.709908)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon85" parent="World/Rocks" unique_id=1604426414 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(-0.24285324, 0, 0.97006303, 0, 1, 0, -0.97006303, 0, -0.24285324, -23.600468, 0.19624591, -53.339375)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon86" parent="World/Rocks" unique_id=1186474023 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(-0.24285324, 0, 0.97006303, 0, 1, 0, -0.97006303, 0, -0.24285324, -25.235271, 0.19624591, -59.869495)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon87" parent="World/Rocks" unique_id=1967702202 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(-0.8088939, 0, 0.58795464, 0, 1, 0, -0.58795464, 0, -0.8088939, -32.045815, 0.19624591, -30.788681)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon88" parent="World/Rocks" unique_id=126467389 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(-0.8088939, 0, 0.58795464, 0, 1, 0, -0.58795464, 0, -0.8088939, -25.917774, 0.19624591, -26.33444)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon89" parent="World/Rocks" unique_id=1590810115 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(-0.8088939, 0, 0.58795464, 0, 1, 0, -0.58795464, 0, -0.8088939, -21.980507, 0.19624591, -23.472588)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon90" parent="World/Rocks" unique_id=511997358 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(-0.8088939, 0, 0.58795464, 0, 1, 0, -0.58795464, 0, -0.8088939, -9.249112, 0.19624591, -14.218613)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon91" parent="World/Rocks" unique_id=1473982248 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(-0.8088939, 0, 0.58795464, 0, 1, 0, -0.58795464, 0, -0.8088939, -15.47022, 0.19624591, -18.740503)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon92" parent="World/Rocks" unique_id=869698274 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(-0.8088939, 0, 0.58795464, 0, 1, 0, -0.58795464, 0, -0.8088939, -1.1601763, 0.19624591, -8.339069)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon93" parent="World/Rocks" unique_id=127609691 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(-0.8088939, 0, 0.58795464, 0, 1, 0, -0.58795464, 0, -0.8088939, -41.474194, 0.19624591, -37.641815)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon94" parent="World/Rocks" unique_id=1129151255 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(-0.8088939, 0, 0.58795464, 0, 1, 0, -0.58795464, 0, -0.8088939, -47.002224, 0.19624591, -41.65993)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon95" parent="World/Rocks" unique_id=1395357647 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(-0.8088939, 0, 0.58795464, 0, 1, 0, -0.58795464, 0, -0.8088939, -52.447407, 0.19624591, -45.617836)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon96" parent="World/Rocks" unique_id=1925701704 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(0.39838088, 0, 0.91722006, 0, 1, 0, -0.91722006, 0, 0.39838088, 4.5017195, 0.19624591, -61.50117)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon97" parent="World/Rocks" unique_id=667568725 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(0.39838088, 0, 0.91722006, 0, 1, 0, -0.91722006, 0, 0.39838088, 1.4836531, 0.19624591, -54.55247)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon23" parent="World/Rocks" unique_id=2042925396 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(0.7930132, 0, -0.6092044, 0, 1, 0, 0.6092044, 0, 0.7930132, 3.6359076, 0.19624591, 17.369305)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon24" parent="World/Rocks" unique_id=52913494 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(0.7930132, 0, -0.6092044, 0, 1, 0, 0.6092044, 0, 0.7930132, -8.845535, 0.19624591, 7.7808743)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon25" parent="World/Rocks" unique_id=66876363 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(0.7930132, 0, -0.6092044, 0, 1, 0, 0.6092044, 0, 0.7930132, -2.7465668, 0.19624591, 12.466192)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon26" parent="World/Rocks" unique_id=683890250 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(0.7930132, 0, -0.6092044, 0, 1, 0, 0.6092044, 0, 0.7930132, -16.775667, 0.19624591, 1.6888313)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon27" parent="World/Rocks" unique_id=95853578 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(0.7930132, 0, -0.6092044, 0, 1, 0, 0.6092044, 0, 0.7930132, 22.746881, 0.19624591, 32.050636)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon28" parent="World/Rocks" unique_id=1809375282 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(0.7930132, 0, -0.6092044, 0, 1, 0, 0.6092044, 0, 0.7930132, 28.16638, 0.19624591, 36.21397)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon29" parent="World/Rocks" unique_id=823151129 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(0.7930132, 0, -0.6092044, 0, 1, 0, 0.6092044, 0, 0.7930132, 33.50467, 0.19624591, 40.314922)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon30" parent="World/Rocks" unique_id=1365140112 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(0.7930132, 0, -0.6092044, 0, 1, 0, 0.6092044, 0, 0.7930132, 13.503607, 0.19624591, 24.949814)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon31" parent="World/Rocks" unique_id=726751282 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(0.7930132, 0, -0.6092044, 0, 1, 0, 0.6092044, 0, 0.7930132, 7.4958763, 0.19624591, 20.334587)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon32" parent="World/Rocks" unique_id=1980136939 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(0.7930132, 0, -0.6092044, 0, 1, 0, 0.6092044, 0, 0.7930132, 3.6359076, 0.19624591, 17.369305)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon33" parent="World/Rocks" unique_id=335033920 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(0.7930132, 0, -0.6092044, 0, 1, 0, 0.6092044, 0, 0.7930132, -8.845535, 0.19624591, 7.7808743)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon34" parent="World/Rocks" unique_id=63098998 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(0.7930132, 0, -0.6092044, 0, 1, 0, 0.6092044, 0, 0.7930132, -2.7465668, 0.19624591, 12.466192)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon35" parent="World/Rocks" unique_id=409449314 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(0.7930132, 0, -0.6092044, 0, 1, 0, 0.6092044, 0, 0.7930132, -16.775667, 0.19624591, 1.6888313)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon36" parent="World/Rocks" unique_id=1256551443 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(0.7930132, 0, -0.6092044, 0, 1, 0, 0.6092044, 0, 0.7930132, 22.746881, 0.19624591, 32.050636)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon37" parent="World/Rocks" unique_id=619636840 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(0.7930132, 0, -0.6092044, 0, 1, 0, 0.6092044, 0, 0.7930132, 28.16638, 0.19624591, 36.21397)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon38" parent="World/Rocks" unique_id=1776990131 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(0.7930132, 0, -0.6092044, 0, 1, 0, 0.6092044, 0, 0.7930132, 33.50467, 0.19624591, 40.314922)
+weapon_scene = ExtResource("9_eb6dy")
+
+[node name="DroppedWeapon" parent="World" unique_id=1860399720 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1776882, 0.91624296, 4.9159975)
 weapon_scene = ExtResource("4_eb6dy")
+price = 10
+
+[node name="DroppedWeapon2" parent="World" unique_id=815125906 instance=ExtResource("3_ya4ey")]
+transform = Transform3D(-0.6715914, 0, -0.74092185, 0, 1, 0, 0.74092185, 0, -0.6715914, -1.185945, 0.91624296, 5.362321)
+weapon_scene = ExtResource("10_trceg")
+price = 50
 
 [node name="Player" parent="." unique_id=625775103 instance=ExtResource("4_jyhfs")]
 transform = Transform3D(-1, 0, -5.9604645e-08, 0, 1, 0, 5.9604645e-08, 0, -1, 0, 1, -6)
@@ -173,6 +567,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 59.208946, 0)
 script = ExtResource("5_tbgi4")
 
 [node name="SpawnBox" type="Area3D" parent="BoidsManager" unique_id=2027735601]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -25.902042, 0)
+collision_layer = 0
+collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BoidsManager/SpawnBox" unique_id=479556459]
 shape = SubResource("BoxShape3D_tbgi4")

@@ -12,6 +12,8 @@ var drone: Drone
 var dead_boid: PackedScene = preload("res://prefabs/boids/deadBoid.tscn")
 var drone_packed: PackedScene = preload("res://prefabs/boids/drone.tscn")
 
+var rarity: String = "Common"
+
 func _ready() -> void:
 	for s in get_children():
 		if (s is Steer):
@@ -68,6 +70,7 @@ func get_hit() -> void:
 	dead_boid_instance.global_transform = global_transform
 	dead_boid_instance.velocity = velocity
 	dead_boid_instance.drone.set_color(drone.rarity_torus_1.material_override.albedo_color)
+	dead_boid_instance.rarity = rarity
 	queue_free()
 
 func load_ressource(ressource: BoidRessource) -> void:

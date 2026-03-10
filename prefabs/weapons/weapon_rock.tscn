@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://c2p2orkp5ldsd"]
+
+[ext_resource type="ArrayMesh" uid="uid://gi036cc3m081" path="res://models/rock/model_0.obj" id="1_5yijh"]
+[ext_resource type="Script" uid="uid://qmirw24nhwug" path="res://scripts/weapons/weapon.gd" id="1_ec1xd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ec1xd"]
+albedo_color = Color(0.42365083, 0.42365056, 0.4236507, 1)
+
+[node name="WeaponRock" type="Node3D" unique_id=59695488]
+script = ExtResource("1_ec1xd")
+metadata/_custom_type_script = "uid://qmirw24nhwug"
+
+[node name="Model" type="MeshInstance3D" parent="." unique_id=905401863]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_ec1xd")
+mesh = ExtResource("1_5yijh")

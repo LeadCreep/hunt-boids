@@ -15,7 +15,7 @@ func _ready() -> void:
 	slot2_text = slot2_ui.get_node("SlotCount") as Label
 	slot3_text = slot3_ui.get_node("SlotCount") as Label
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 

@@ -98,6 +98,8 @@ use={
 3d_physics/layer_1="World"
 3d_physics/layer_2="Player"
 3d_physics/layer_3="Boids"
+3d_physics/layer_4="ThrowableObjects"
+3d_physics/layer_5="DeadBoid"
 
 [physics]
 

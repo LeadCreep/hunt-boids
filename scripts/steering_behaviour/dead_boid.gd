@@ -5,6 +5,8 @@ var on_floor: bool = false
 var drone_packed: PackedScene = preload("res://prefabs/boids/drone.tscn")
 var drone: Drone
 
+var rarity: String = "Common"
+
 func _init() -> void:
 	drone = drone_packed.instantiate() as Drone
 	add_child(drone)
@@ -25,4 +27,5 @@ func _physics_process(delta: float) -> void:
 		velocity = Vector3.ZERO
 
 func get_used(_inv: Inventory) -> void:
+	_inv.add_boid(rarity)
 	queue_free()
