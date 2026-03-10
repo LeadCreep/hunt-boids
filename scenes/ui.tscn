@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dptk1e47lkvpd" path="res://icon.svg" id="1_nt7q6"]
 [ext_resource type="Script" uid="uid://dvp1va0v8yclo" path="res://scripts/player/inventory_ui.gd" id="1_x4jx1"]
+[ext_resource type="Script" uid="uid://cmtndh27o2qif" path="res://scripts/ui.gd" id="1_yev5y"]
 
 [node name="UI" type="Control" unique_id=1975649066]
 layout_mode = 3
@@ -13,6 +14,7 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 1
+script = ExtResource("1_yev5y")
 
 [node name="Crossair" type="ColorRect" parent="." unique_id=1821376237]
 layout_mode = 1

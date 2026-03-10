@@ -7,8 +7,10 @@ class_name Boid
 var steerings: Array[Steer]
 var desired_velocity: Vector3 = Vector3.ZERO
 var steering_force: Vector3 = Vector3.ZERO
+var drone: Drone
 
 var dead_boid: PackedScene = preload("res://prefabs/boids/deadBoid.tscn")
+var drone_packed: PackedScene = preload("res://prefabs/boids/drone.tscn")
 
 func _ready() -> void:
 	for s in get_children():
@@ -65,13 +67,13 @@ func get_hit() -> void:
 	parent.add_child(dead_boid_instance)
 	dead_boid_instance.global_transform = global_transform
 	dead_boid_instance.velocity = velocity
-	# dead_boid_instance.get_child(0).mesh = $MeshInstance3D.mesh
-	# dead_boid_instance.get_child(0).material_override = $MeshInstance3D.material_override
+	dead_boid_instance.drone.set_color(drone.rarity_torus_1.material_override.albedo_color)
 	queue_free()
 
 func load_ressource(ressource: BoidRessource) -> void:
+	drone = drone_packed.instantiate() as Drone
+	drone.position = Vector3.ZERO
+	add_child(drone)
 	MAX_SPEED = ressource.max_speed
 	ACCELERATION = ressource.acceleration
-	# var mesh_instance: MeshInstance3D = $MeshInstance3D
-	# mesh_instance.mesh = ressource.mesh
-	# mesh_instance.material_override = ressource.material
+	drone.set_color(ressource.color)

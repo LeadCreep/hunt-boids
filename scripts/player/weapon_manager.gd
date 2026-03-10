@@ -14,7 +14,6 @@ func _unhandled_input(event: InputEvent) -> void:
 		weapon_animation.stop()
 		weapon_animation.play("fire")
 		if raycast.is_colliding():
-			print("Hit detected")
 			var collider = raycast.get_collider()
 			if collider.has_method("get_hit"):
 				collider.get_hit()

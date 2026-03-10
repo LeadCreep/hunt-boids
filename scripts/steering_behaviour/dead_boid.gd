@@ -2,6 +2,13 @@ extends CharacterBody3D
 
 var on_floor: bool = false
 
+var drone_packed: PackedScene = preload("res://prefabs/boids/drone.tscn")
+var drone: Drone
+
+func _init() -> void:
+	drone = drone_packed.instantiate() as Drone
+	add_child(drone)
+
 func _physics_process(delta: float) -> void:
 	if on_floor:
 		return
@@ -18,6 +25,5 @@ func _physics_process(delta: float) -> void:
 		on_floor = true
 		velocity = Vector3.ZERO
 
-func get_used(inv: Inventory) -> void:
-	print("Used")
+func get_used(_inv: Inventory) -> void:
 	queue_free()

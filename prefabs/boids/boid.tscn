@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://dqhgxg74264mx"]
 
 [ext_resource type="Script" uid="uid://dvicwbisqk0s8" path="res://scripts/steering_behaviour/boid.gd" id="1_1cuuw"]
-[ext_resource type="PackedScene" uid="uid://d01auaahtb44i" path="res://prefabs/boids/drone.tscn" id="2_37uwk"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0wt6w"]
 size = Vector3(0.32330322, 0.92852783, 1.1032715)
@@ -10,9 +9,6 @@ size = Vector3(0.32330322, 0.92852783, 1.1032715)
 collision_layer = 4
 collision_mask = 5
 script = ExtResource("1_1cuuw")
-
-[node name="Drone" parent="." unique_id=166426223 instance=ExtResource("2_37uwk")]
-transform = Transform3D(0.99999785, 0.001973685, 0.00061107625, -0.0019753145, 0.99999446, 0.00268188, -0.00060578913, -0.002683079, 0.99999624, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1339797490]
 transform = Transform3D(1.9106855e-15, -4.371139e-08, 1, -1, -4.371139e-08, 0, 4.371139e-08, -1, -4.371139e-08, 0.012573246, 0.15567017, 0.07156372)

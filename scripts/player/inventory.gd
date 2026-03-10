@@ -1,13 +1,8 @@
 extends Node
 class_name Inventory
 
-@export var ui: InventoryUI = null
+@export var ui: UI
+var inventory_ui: InventoryUI = null
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	inventory_ui = ui.get_inventory_UI()
